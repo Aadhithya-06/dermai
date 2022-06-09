@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "dermai",
+    "slug": "dermai",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "dermai"
+}
