@@ -24,8 +24,8 @@ const HomeScreen = () => {
         <TouchableOpacity style={[
                               tw `absolute bottom-64 w-52 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "25%"}]}
-                          onPress={() => navigation.navigate("Login")}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Log In</Text>
+                          onPress={() => navigation.navigate("Log")}>
+          <Text style={tw `font-semibold text-center text-2xl text-white`}>Logging In</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
