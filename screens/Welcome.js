@@ -3,7 +3,7 @@ import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { useNavigation } from '@react-navigation/core'
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
 //  const navigation = useNavigation();
   
   return (
@@ -26,7 +26,8 @@ const Welcome = () => {
 
         <TouchableOpacity style={[
                               tw `absolute bottom-32 w-52 bg-black p-6 rounded-2xl left-24`,
-                              {marginHorizontal : "2%"}]}>
+                              {marginHorizontal : "2%"}]}
+                              onPress={() => navigation.navigate("CameraPage")}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Upload Picture</Text>
         </TouchableOpacity>        
       </View>
