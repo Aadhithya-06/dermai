@@ -14,6 +14,7 @@ import CameraPage from "../screens/CameraPage"
 import Security from './../screens/Security'
 import Faq from './../screens/Faq'
 import Family from './../screens/Family'
+import Results from './../screens/Results'
 
 const Stack = createStackNavigator();
 
@@ -49,13 +50,13 @@ const RootStack = () => {
                 <Stack.Screen name="Login" component={Login}/>
                 <Stack.Screen name="Signup" component={Signup}/>
 
-                <Stack.Screen options={{headerTintColor: primary }} name="Welcome" component={Welcome}/>
                 <Stack.Screen name = "CameraPage" component={CameraPage}/>
 
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Security" component={Security}/>
                 <Stack.Screen name="Faq" component={Faq}/>
                 <Stack.Screen name="Family" component={Family}/>
+                <Stack.Screen name="Results" component={Results}/>
 
             </Stack.Navigator>
         </NavigationContainer>

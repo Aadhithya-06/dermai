@@ -9,7 +9,7 @@ import Button from '../components/Button';
 //API
 import axios from 'axios';
 
-export default function CameraPage({navigation}) {
+export default function CameraPage({navigation, route}) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
@@ -40,9 +40,9 @@ export default function CameraPage({navigation}) {
     if (image) {
       try {
         const asset = await MediaLibrary.createAssetAsync(image);
-        alert('Picture saved! 🎉');
         setImage(null);
         console.log('saved successfully');
+        navigation.navigate("Results",route.params)
       } catch (error) {
         console.log(error);
       }

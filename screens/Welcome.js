@@ -31,7 +31,7 @@ const Welcome = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `absolute bottom-32 w-52 bg-black p-6 rounded-2xl left-24`,
                               {marginHorizontal : "2%"}]}
-                              onPress={() => navigation.navigate("CameraPage")}>
+                              onPress={() => navigation.navigate("CameraPage",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Upload Picture</Text>
         </TouchableOpacity>        
       </View>
