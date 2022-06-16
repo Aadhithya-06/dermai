@@ -10,6 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from './../screens/Login'
 import Signup from './../screens/Signup'
 import Welcome from './../screens/Welcome'
+import CameraPage from "../screens/CameraPage"
 import Security from './../screens/Security'
 import Faq from './../screens/Faq'
 import Family from './../screens/Family'
@@ -33,7 +34,7 @@ const RootStack = () => {
     return(
         <NavigationContainer theme={MyTheme}>
             <Stack.Navigator
-                screenOptions={{
+                 screenOptions={{
                     headerStyled:{
                         backgroundColor: '#FFFFFF'
                     },
@@ -41,18 +42,21 @@ const RootStack = () => {
                     //headerTintColor: secondary,
                     headerTransparent: true,
                     headerTitle: '',
-                    headerLeftContainerStyle: {
-                        paddingLeft: 20
-                    }
-                }}
+                    headerLeft: null,
+                }} 
                 initialRouteName="Login"
             >
                 <Stack.Screen name="Login" component={Login}/>
                 <Stack.Screen name="Signup" component={Signup}/>
+
+                <Stack.Screen options={{headerTintColor: primary }} name="Welcome" component={Welcome}/>
+                <Stack.Screen name = "CameraPage" component={CameraPage}/>
+
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Security" component={Security}/>
                 <Stack.Screen name="Faq" component={Faq}/>
                 <Stack.Screen name="Family" component={Family}/>
+
             </Stack.Navigator>
         </NavigationContainer>
     )
