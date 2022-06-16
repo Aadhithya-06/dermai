@@ -41,10 +41,12 @@ const RootStack = () => {
                         backgroundColor: '#FFFFFF'
                     },
                 
-                    //headerTintColor: secondary,
+                    headerTintColor: primary,
                     headerTransparent: true,
                     headerTitle: '',
-                    headerLeft: null,
+                    headerLeftContainerStyle: {
+                        paddingLeft: 20
+                    }
                 }} 
                 initialRouteName="Login"
             >

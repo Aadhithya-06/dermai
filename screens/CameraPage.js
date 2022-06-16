@@ -67,6 +67,7 @@ export default function CameraPage({navigation, route}) {
               flexDirection: 'row',
               justifyContent: 'space-between',
               paddingHorizontal: 30,
+              paddingTop: 40
             }}
           >
             <Button
