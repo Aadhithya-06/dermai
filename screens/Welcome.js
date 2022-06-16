@@ -16,7 +16,7 @@ const Welcome = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `absolute bottom-60 w-52 bg-black p-8 rounded-2xl right-20`,
                               {marginHorizontal : "30%"}]}
-                          >
+                          onPress={() => navigation.navigate("Record",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Records</Text>
         </TouchableOpacity> 
 

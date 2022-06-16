@@ -15,6 +15,7 @@ import Security from './../screens/Security'
 import Faq from './../screens/Faq'
 import Family from './../screens/Family'
 import Results from './../screens/Results'
+import Record from './../screens/Record'
 
 const Stack = createStackNavigator();
 
@@ -57,6 +58,7 @@ const RootStack = () => {
                 <Stack.Screen name="Faq" component={Faq}/>
                 <Stack.Screen name="Family" component={Family}/>
                 <Stack.Screen name="Results" component={Results}/>
+                <Stack.Screen name="Record" component={Record}/>
 
             </Stack.Navigator>
         </NavigationContainer>
