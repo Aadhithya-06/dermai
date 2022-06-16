@@ -16,7 +16,7 @@ const {primary, secondary,green,red} = Colors;
 export const StyledContainer = styled.View`
     flex: 1;
     padding: 25px;
-    padding-top: ${StatusBarHeight}px;
+    padding-top: ${StatusBarHeight - 50}px;
     background-color: ${primary};
 `;
 
@@ -27,8 +27,8 @@ export const InnerContainer = styled.View`
 `;
 
 export const PageLogoLogin = styled.Image`
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
 `;
 
 export const PageLogoSignup = styled.Image`

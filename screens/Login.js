@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {View} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 //formik
 import { Formik } from 'formik';
 

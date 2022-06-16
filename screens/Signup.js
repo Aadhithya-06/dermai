@@ -62,7 +62,7 @@ const Signup = ({navigation}) => {
 
     const handleSignup = (credentials) => {
         handleMessage(null)
-        const url = 'https://dermai-server.herokuapp.com/user/signup'
+        const url = 'https://secure-forest-32038.herokuapp.com/user/signup'
         axios.post(url, credentials)
         .then((response)=>{
             const result = response.data;
@@ -138,15 +138,13 @@ const Signup = ({navigation}) => {
                     keyboardType="email-address"
                 />
                 <MyTextInput
-                    label = "Date of Birth"
-                    placeholder = "YYYY - MM - DD"
+                    label = "Age"
+                    placeholder = "Enter Age"
                     placeholderTextColor={'#9CA3AF'}
                     onChangeText={handleChange('dateOfBirth')} 
                     onBlur={handleBlur('dateOfBirth')}
                     value={dob ? dob.toDateString() : ''}
-                    isDate={true}
                     editable={false}
-                    showDatePicker={showDatePicker}
                     />
 
                 <MyTextInput

@@ -3,18 +3,19 @@ import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { useNavigation } from '@react-navigation/core'
 
-const Welcome = () => {
-//  const navigation = useNavigation();
+
+const Welcome = ({navigation}) => {
+ //const navigation = useNavigation();
   
   return (
-    <View>
+    <View style={tw `bg-white`}>
       <Text style={tw `font-bold text-center py-20 text-4xl`}>Andrew Tate</Text>
 
       <View style={tw `h-1/2`}>
         <TouchableOpacity style={[
                               tw `absolute bottom-60 w-52 bg-black p-8 rounded-2xl right-20`,
                               {marginHorizontal : "30%"}]}
-                          onPress={() => navigation.navigate("Login")}>
+                          >
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Records</Text>
         </TouchableOpacity> 
 
@@ -32,7 +33,7 @@ const Welcome = () => {
       </View>
 
 
-      <View style={{bottom: 40, flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={tw `bg-white`, {bottom: 40, flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <View style={{ backgroundColor: '#ECECEC', width: 300, height: 150}}>
           <Text style={tw `font-semibold text-center text-xl`}>Daily skin hygiene tip: </Text>
           <Text style={tw `top-4 text-center text-lg`}>Ensure that skin is properly disinfected after a cut from any metallic/wooden object.</Text>
@@ -54,7 +55,7 @@ const Welcome = () => {
         <TouchableOpacity style={[
                               tw `absolute top-72 w-52 bg-white left-24`,
                               {marginHorizontal : "2%"}]}
-//                          onPress={() => navigation.navigate("Security")}
+                          onPress={() => navigation.navigate("Security")}
                           >
           <Text style={tw `font-semibold text-center text-xl text-black`}>Security & Privacy</Text>
         </TouchableOpacity>      
