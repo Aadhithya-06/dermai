@@ -4,12 +4,13 @@ import tw from 'tailwind-react-native-classnames'
 import { useNavigation } from '@react-navigation/core'
 
 
-const Welcome = ({navigation}) => {
- //const navigation = useNavigation();
+const Welcome = ({navigation, route}) => {
+
+  const {name, email} = route.params
   
   return (
     <View style={tw `bg-white`}>
-      <Text style={tw `font-bold text-center py-20 text-4xl`}>Andrew Tate</Text>
+      <Text style={tw `font-bold text-center py-20 text-4xl`}>{name || "Shrey Shah"}</Text>
 
       <View style={tw `h-1/2`}>
         <TouchableOpacity style={[
@@ -21,7 +22,9 @@ const Welcome = ({navigation}) => {
 
         <TouchableOpacity style={[
                               tw `absolute bottom-60 w-52 bg-black p-4 rounded-2xl left-24`,
-                              {marginHorizontal : "30%"}]}>
+                              {marginHorizontal : "30%"}]}
+                              onPress={() => navigation.navigate("Family",route.params)}>
+                              
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Family History</Text>
         </TouchableOpacity> 
 
@@ -48,14 +51,15 @@ const Welcome = ({navigation}) => {
 
         <TouchableOpacity style={[
                               tw `absolute top-60 w-52 bg-white left-24`,
-                              {marginHorizontal : "2%"}]}>
+                              {marginHorizontal : "2%"}]}
+                              onPress={() => navigation.navigate("Faq",route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-black`}>FAQs</Text>
         </TouchableOpacity>  
 
         <TouchableOpacity style={[
                               tw `absolute top-72 w-52 bg-white left-24`,
                               {marginHorizontal : "2%"}]}
-                          onPress={() => navigation.navigate("Security")}
+                          onPress={() => navigation.navigate("Security",route.params)}
                           >
           <Text style={tw `font-semibold text-center text-xl text-black`}>Security & Privacy</Text>
         </TouchableOpacity>      

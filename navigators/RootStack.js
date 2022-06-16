@@ -11,6 +11,8 @@ import Login from './../screens/Login'
 import Signup from './../screens/Signup'
 import Welcome from './../screens/Welcome'
 import Security from './../screens/Security'
+import Faq from './../screens/Faq'
+import Family from './../screens/Family'
 
 const Stack = createStackNavigator();
 
@@ -49,6 +51,8 @@ const RootStack = () => {
                 <Stack.Screen name="Signup" component={Signup}/>
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Security" component={Security}/>
+                <Stack.Screen name="Faq" component={Faq}/>
+                <Stack.Screen name="Family" component={Family}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
