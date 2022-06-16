@@ -37,15 +37,29 @@ export default function CameraPage({navigation, route}) {
   };
 
   const savePicture = async () => {
-    if (image) {
-      try {
-        const asset = await MediaLibrary.createAssetAsync(image);
-        setImage(null);
+    const formData = new FormData();
+    formData.append('image', {
+      name: new Date() + '_image',
+      uri: image,
+      type: 'image/jpg',
+    });
+    const url = "https://secure-forest-32038.herokuapp.com/upload"
+
+    try {
+      const res = await axios.post(url, formData, {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      if (res.data !== "SUCCESS"){
+        navigation.navigate("Welcome",route.params);
+      } else{
         console.log('saved successfully');
-        navigation.navigate("Results",route.params)
-      } catch (error) {
-        console.log(error);
+        navigation.navigate("Results",route.params);
       }
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
