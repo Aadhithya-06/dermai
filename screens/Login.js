@@ -41,7 +41,7 @@ const Login = ({navigation}) => {
 
     const handleLogin = (credentials) => {
         handleMessage(null)
-        const url = 'https://dermai-server.herokuapp.com/user/signin'
+        const url = 'https://secure-forest-32038.herokuapp.com/signin'
         axios.post(url, credentials)
         .then((response)=>{
             const result = response.data;

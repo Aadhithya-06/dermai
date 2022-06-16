@@ -36,7 +36,7 @@ export default function CameraPage({navigation}) {
     }
   };
 
-/*   const savePicture = async () => {
+  const savePicture = async () => {
     if (image) {
       try {
         const asset = await MediaLibrary.createAssetAsync(image);
@@ -47,7 +47,7 @@ export default function CameraPage({navigation}) {
         console.log(error);
       }
     }
-  }; */
+  };
 
   if (hasCameraPermission === false) {
     return <Text>No access to camera</Text>;
@@ -109,7 +109,7 @@ export default function CameraPage({navigation}) {
               onPress={() => setImage(null)}
               icon="retweet"
             />
-            <Button title="Save" onPress={() => navigation.navigate("Welcome")} icon="check" />
+            <Button title="Save" onPress={savePicture} icon="check" />
           </View>
         ) : (
           <Button title="Take a picture" onPress={takePicture} icon="camera" />
