@@ -34,36 +34,18 @@ import axios from 'axios';
 
 import KeyboardAvoidingWrapper from '../components/keyboardAvoidingWrapper';
 
-//datetimepicker
-import DateTimePicker from '@react-native-community/datetimepicker'
 
 const Signup = ({navigation}) => {
     const [hidePassword, setHidePassword] = useState(true);
     const [show, setShow] = useState(false);
-    const[date, setDate] = useState(new Date(2000,0,1));
     const [message, setMessage] = useState();
     const [messageType, setMessageType] = useState();
-
-    //Actual date of birth to be sent
-    const [dob, setDob] = useState();
-
-    const onChange = (event, selectedDate) => {
-        const currentDate = selectedDate || date;
-        setShow(false);
-        setDate(currentDate);
-        setDob(currentDate);
-    }
-
-    const showDatePicker = () => {
-        setShow(true);
-    }
 
 
 
     const handleSignup = (credentials) => {
         handleMessage(null)
-
-        const url = 'https://secure-forest-32038.herokuapp.com/signup'
+        const url = 'https://dermai-server.herokuapp.com/user/signup'
         axios.post(url, credentials)
         .then((response)=>{
             const result = response.data;
@@ -93,21 +75,9 @@ const Signup = ({navigation}) => {
             <InnerContainer>
                 <PageLogoSignup resizeMode="cover" source = {require('./../assets/drplogo.png')} />
                 <Line></Line>
-
-            {show && (
-                <DateTimePicker
-                testID="dateTimePicker"
-                value={date}
-                mode={'date'}
-                is24Hour={true}
-                display="default"
-                onChange={onChange}
-                />
-            )}
             <Formik
                 initialValues={{name: '',email: '', dateOfBirth: '', password: '', confirmPassword: ''}}
                 onSubmit={(values) => {
-                    values = {...values, dateOfBirth: dob};
                     if(values.email == '' || 
                     values.password == '' || 
                     values.dateOfBirth == '' || 
@@ -139,14 +109,13 @@ const Signup = ({navigation}) => {
                     keyboardType="email-address"
                 />
                 <MyTextInput
-                    label = "Age"
-                    placeholder = "Enter Age"
+                    label = "Date of Birth"
+                    placeholder = "Age"
                     placeholderTextColor={'#9CA3AF'}
-                    onChangeText={handleChange('dateOfBirth')} 
+                    onChangeText={handleChange('dateOfBirth')}
                     onBlur={handleBlur('dateOfBirth')}
-                    value={dob ? dob.toDateString() : ''}
-                    editable={false}
-                    />
+                    value={values.dateOfBirth}
+                />
 
                 <MyTextInput
                     label = "Password"
@@ -194,18 +163,15 @@ const Signup = ({navigation}) => {
     );
 }
 
-const MyTextInput = ({label, icon,isPassword,hidePassword,setHidePassword,
-    isDate,showDatePicker, ...props}) => {
+const MyTextInput = ({label, icon,isPassword,hidePassword,setHidePassword, ...props}) => {
     return(
         <View>
             <LeftIcon>
                 <Octicons name={icon} size={30} color={secondary} />
             </LeftIcon>
             <StyledInputLabel>{label}</StyledInputLabel>
-            {!isDate && <StyledTextInput {...props}/>}
-            {isDate && <TouchableOpacity onPress={showDatePicker}>
-                <StyledTextInput {...props}/>
-                </TouchableOpacity>}
+            {<StyledTextInput {...props}/>}
+
             {isPassword && (
                 <RightIcon onPress={() => setHidePassword(!hidePassword)}>
                     <Ionicons name={hidePassword ? 'md-eye-off' : 'md-eye'} size={30} color={'#9CA3AF'}/>

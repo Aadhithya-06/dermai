@@ -16,6 +16,7 @@ export default function CameraPage({navigation, route}) {
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
   const cameraRef = useRef(null);
   const [DATA,setDATA] = useState(null);
+  const {name, email} = route.params;
   
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function CameraPage({navigation, route}) {
   };
 
   const savePicture = async () => {
-   source = DATA.base64
+   var source = DATA.base64
     if (image) {
       let base64Img = `data:image/jpg;base64,${source}`;
       let apiUrl =
@@ -61,7 +62,18 @@ export default function CameraPage({navigation, route}) {
           let data = await response.json();
           if (data.secure_url) {
             alert('Upload successful');
-            navigation.navigate("Results",route.params)
+            const credentials = {email: email,images: data.secure_url}
+            const url = 'https://secure-forest-32038.herokuapp.com/upload'
+            console.log(credentials)
+            axios.post(url,credentials).then((response) =>{
+              const result = response.data;
+              const {message, status, data} = result;
+              if (status !== "SUCCESS"){
+                  console.log(status)
+              } else{
+                  navigation.navigate("Results",route.params)
+              }
+          })
           }
         })
         .catch(err => {
