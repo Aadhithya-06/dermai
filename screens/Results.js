@@ -2,7 +2,7 @@ import { StyleSheet, Text, View,SafeAreaView, Image, TouchableOpacity } from 're
 import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 
-const ResultScreen = ({navigation,route}) => {
+const Results = ({navigation,route}) => {
 
   return (
     <View>
@@ -38,6 +38,6 @@ const ResultScreen = ({navigation,route}) => {
   )
 }
 
-export default ResultScreen
+export default Results
 
 const styles = StyleSheet.create({})

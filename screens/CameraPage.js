@@ -15,6 +15,8 @@ export default function CameraPage({navigation, route}) {
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
   const cameraRef = useRef(null);
+  const [DATA,setDATA] = useState(null);
+  
 
   useEffect(() => {
     (async () => {
@@ -27,9 +29,10 @@ export default function CameraPage({navigation, route}) {
   const takePicture = async () => {
     if (cameraRef) {
       try {
-        const data = await cameraRef.current.takePictureAsync();
-        console.log(data);
+        const options = { quality: 0.7, base64: true };
+        const data = await cameraRef.current.takePictureAsync(options);
         setImage(data.uri);
+        setDATA(data);
       } catch (error) {
         console.log(error);
       }
@@ -37,29 +40,35 @@ export default function CameraPage({navigation, route}) {
   };
 
   const savePicture = async () => {
-    const formData = new FormData();
-    formData.append('image', {
-      name: new Date() + '_image',
-      uri: image,
-      type: 'image/jpg',
-    });
-    const url = "https://secure-forest-32038.herokuapp.com/upload"
+   source = DATA.base64
+    if (image) {
+      let base64Img = `data:image/jpg;base64,${source}`;
+      let apiUrl =
+        'https://api.cloudinary.com/v1_1/dveg6urfn/image/upload';
+      let data = {
+        file: base64Img,
+        upload_preset: 'dermai'
+      };
 
-    try {
-      const res = await axios.post(url, formData, {
+      fetch(apiUrl, {
+        body: JSON.stringify(data),
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'multipart/form-data',
+          'content-type': 'application/json'
         },
-      });
-      if (res.data !== "SUCCESS"){
-        navigation.navigate("Welcome",route.params);
-      } else{
-        console.log('saved successfully');
-        navigation.navigate("Results",route.params);
-      }
-    } catch (error) {
-      console.log(error.message);
+        method: 'POST'
+      })
+        .then(async response => {
+          let data = await response.json();
+          if (data.secure_url) {
+            alert('Upload successful');
+            navigation.navigate("Results",route.params)
+          }
+        })
+        .catch(err => {
+          alert('Cannot upload');
+          console.log(err);
+        });
+
     }
   };
 

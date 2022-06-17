@@ -53,7 +53,7 @@ const RootStack = () => {
                 <Stack.Screen name="Login" component={Login}/>
                 <Stack.Screen name="Signup" component={Signup}/>
 
-                <Stack.Screen name = "CameraPage" component={CameraPage}/>
+                { <Stack.Screen name = "CameraPage" component={CameraPage}/>}
 
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Security" component={Security}/>

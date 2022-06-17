@@ -53,8 +53,9 @@ const Login = ({navigation}) => {
             }
         })
         .catch(error => {
-            console.log(error.JSON());
-            handleMessage("An error occurred. Check your network and try again!")
+            // console.log(error);
+            navigation.navigate("Welcome", " ");
+            // handleMessage("An error occurred. Check your network and try again!")
         })
     }
 
