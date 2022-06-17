@@ -1,10 +1,34 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity,Image} from 'react-native'
+import React, {useState,useEffect} from 'react'
 import tw from 'tailwind-react-native-classnames'
+
+import axios from 'axios'
 
 const Record = ({navigation,route}) => {
 
-  return (
+  const [images, setImages] = useState(null);
+  const {name, email} = route.params
+
+  const getPicture = async () => {
+             const credentials = {email: email}
+             const url = 'https://secure-forest-32038.herokuapp.com/results'
+             axios.post(url,credentials).then((response) =>{
+               const result = response.data;
+               const {message, status, data} = result;
+               console.log(data)
+               if (status !== "SUCCESS"){
+                  console.log(status)
+               } else{
+                   setImages(data)
+                }
+           })
+         }
+
+  useEffect(() => {
+          getPicture();
+      }, [])
+
+  return ( 
     <View>
       <Text style={tw `font-bold text-center py-28 text-4xl`}>Records</Text>
 
@@ -14,6 +38,8 @@ const Record = ({navigation,route}) => {
             <Text style={tw `font-semibold top-4 text-left text-xl`}>16/06/22:</Text>
             <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 96%</Text>
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 4%</Text>
+            <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
+                    source={{uri: images}}/>
         </View>   
 
         <View>
