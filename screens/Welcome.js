@@ -31,7 +31,7 @@ const Welcome = ({navigation, route}) => {
                               tw `absolute w-52 bg-black p-8 rounded-2xl right-24`,
                               {marginHorizontal : "30%"}]}
                           onPress={() => navigation.navigate("Record",route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Records</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>My Records</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
@@ -39,14 +39,14 @@ const Welcome = ({navigation, route}) => {
                               {marginHorizontal : "30%"}]}
                               onPress={() => navigation.navigate("Family",route.params)}>
                               
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Family History</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Add Family History</Text>
         </TouchableOpacity> 
   
         <TouchableOpacity style={[
                               tw `absolute top-20 w-52 bg-black p-6 rounded-2xl left-24`,
                               {marginHorizontal : "2%"}]}
                               onPress={() => navigation.navigate("CameraPage",route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Upload Picture</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Scan My Disease</Text>
         </TouchableOpacity>        
       </View>
 
