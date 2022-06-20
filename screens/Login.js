@@ -49,12 +49,12 @@ const Login = ({navigation}) => {
             if (status !== "SUCCESS"){
                 handleMessage(message,status);
             } else{
-                navigation.navigate("Welcome", {...data[0]});
+                navigation.navigate("PreLanding", {...data[0]});
             }
         })
         .catch(error => {
             // console.log(error);
-            navigation.navigate("Welcome", " ");
+            navigation.navigate("PreLanding", " ");
             // handleMessage("An error occurred. Check your network and try again!")
         })
     }
