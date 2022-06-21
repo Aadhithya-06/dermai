@@ -44,7 +44,7 @@ const Record = ({navigation,route}) => {
 
         <View>
         <TouchableOpacity style={[
-                              tw `bottom-0 w-48 bg-black right-0 rounded-2xl`,
+                              tw `bottom-0 w-48 bg-black right-0 rounded-2xl p-4`,
                               {marginHorizontal : "2%"}]}
                            onPress={() => navigation.navigate("Welcome",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
