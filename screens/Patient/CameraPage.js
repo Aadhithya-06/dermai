@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
 import { MaterialIcons } from '@expo/vector-icons';
-import Button from '../components/Button';
+import Button from '../../components/Button';
 
 //API
 import axios from 'axios';

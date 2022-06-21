@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import { Formik } from 'formik';
-import KeyboardAvoidingWrapper from '../components/keyboardAvoidingWrapper';
+import KeyboardAvoidingWrapper from '../../components/keyboardAvoidingWrapper';
 import {
     StyledContainer,
     InnerContainer,
@@ -20,7 +20,7 @@ import {
     ExtraView,
     TextLink,
     TextLinkContent
-} from './../components/styles'
+} from '../../components/styles'
 import { StatusBar } from 'expo-status-bar';
 
 const Family = ({navigation, route}) => {

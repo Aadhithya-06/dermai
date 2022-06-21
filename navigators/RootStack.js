@@ -9,16 +9,17 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from './../screens/Login'
 import Signup from './../screens/Signup'
-import Welcome from './../screens/Welcome'
-import CameraPage from "../screens/CameraPage"
-import Security from './../screens/Security'
-import Faq from './../screens/Faq'
-import Family from './../screens/Family'
-import Results from './../screens/Results'
-import Record from './../screens/Record'
+import Welcome from './../screens/Patient/Welcome'
+import CameraPage from "../screens/Patient/CameraPage"
+import Security from './../screens/Patient/Security'
+import Faq from './../screens/Patient/Faq'
+import Family from '../screens/Patient/Family'
+import Results from './../screens/Patient/Results'
+import Record from '../screens/Patient/Record'
 import PreLanding from './../screens/PreLanding'
-import DoctorLanding from './../screens/DoctorLanding'
-import DocRecords from './../screens/DocRecords'
+import DoctorLanding from './../screens/Doctor/Landing'
+import DocRecords from "../screens/Doctor/Records";
+import DoctorQuiz from "../screens/Doctor/Quiz"
 
 const Stack = createStackNavigator();
 
@@ -67,7 +68,7 @@ const RootStack = () => {
                 <Stack.Screen name="PreLanding" component={PreLanding}/>
                 <Stack.Screen name="DoctorLanding" component={DoctorLanding}/>
                 <Stack.Screen name="DocRecords" component={DocRecords}/>
-
+                <Stack.Screen name="DoctorQuiz" component={DoctorQuiz}/>
 
             </Stack.Navigator>
         </NavigationContainer>

@@ -18,7 +18,7 @@ const Welcome = ({navigation, route}) => {
             height:400,
             resizeMode: 'contain',
           }} 
-          source={require('./../assets/drplogo1.png')}>
+          source={require('./../../assets/drplogo1.png')}>
         </Image>
 
         <TouchableOpacity style={[

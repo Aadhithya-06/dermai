@@ -13,9 +13,8 @@ const DoctorLanding = ({navigation, route}) => {
             height:500,
             resizeMode: 'contain',
           }} 
-          source={require('./../assets/drplogo1.png')}>
+          source={require('./../../assets/drplogo1.png')}>
         </Image>
-
         <TouchableOpacity style={[
                               tw `absolute w-4 bg-black p-8 rounded-2xl left-40 bottom-80`,
                               {marginHorizontal : "30%"}]}
@@ -24,20 +23,21 @@ const DoctorLanding = ({navigation, route}) => {
         </TouchableOpacity>
       </View>
 
-      <View style={tw `h-1/2 items-center`}>
-        <TouchableOpacity style={[
-                              tw `absolute bottom-72 w-80 bg-black p-4 rounded-2xl`,
-                              {marginHorizontal : "25%"}]}
-                          onPress={() => navigation.navigate("DocRecords", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient Records</Text>
+      <View style={tw `h-1/2`}>
+      <TouchableOpacity style={[
+                              tw `absolute w-52 bg-black p-8 rounded-2xl right-24 top-5`,
+                              {marginHorizontal : "30%"}]}
+                          onPress={() => navigation.navigate("DocRecords",route.params)}>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Patient's Records</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
-                              tw `absolute bottom-36 w-44 bg-black p-4 rounded-2xl`,
-                              {marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("Welcome", route.params)}>
+                              tw `absolute w-52 bg-black p-4 rounded-2xl left-24 top-5`,
+                              {marginHorizontal : "30%"}]}
+                              onPress={() => navigation.navigate("DoctorQuiz",route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Take Dermatology Quiz</Text>
-        </TouchableOpacity>        
+        </TouchableOpacity>     
+
       </View>
     </View>
   )
@@ -46,3 +46,5 @@ const DoctorLanding = ({navigation, route}) => {
 export default DoctorLanding
 
 const styles = StyleSheet.create({})
+
+

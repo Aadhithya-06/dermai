@@ -13,7 +13,7 @@ const Results = ({navigation,route}) => {
             height:500,
             resizeMode: 'contain',
           }} 
-          source={require('./../assets/drplogo1.png')}>
+          source={require('./../../assets/drplogo1.png')}>
 
         </Image>
       </View>
