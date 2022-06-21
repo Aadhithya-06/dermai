@@ -17,6 +17,13 @@ const PreLanding = ({navigation, route}) => {
           }} 
           source={require('./../assets/drplogo1.png')}>
         </Image>
+
+        <TouchableOpacity style={[
+                              tw `absolute w-4 bg-black p-8 rounded-2xl left-40 bottom-80`,
+                              {marginHorizontal : "30%"}]}
+                          onPress={() => navigation.navigate("Login",route.params)}>
+          <Text style={tw `font-semibold text-center text-sm text-white`}>Log Out</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={tw `h-1/2`}>
