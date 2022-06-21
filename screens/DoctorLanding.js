@@ -21,7 +21,7 @@ const DoctorLanding = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `absolute bottom-72 w-80 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "25%"}]}
-                          onPress={() => navigation.navigate("Login", route.params)}>
+                          onPress={() => navigation.navigate("DocRecords", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient Records</Text>
         </TouchableOpacity> 
 

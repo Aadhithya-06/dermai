@@ -39,14 +39,14 @@ const Welcome = ({navigation, route}) => {
                               {marginHorizontal : "30%"}]}
                               onPress={() => navigation.navigate("Family",route.params)}>
                               
-          <Text style={tw `font-semibold text-center text-xl text-white`}>Add Family History</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Add Family Skin Conditions</Text>
         </TouchableOpacity> 
   
         <TouchableOpacity style={[
-                              tw `absolute top-20 w-52 bg-black p-6 rounded-2xl left-24`,
+                              tw `absolute top-20 w-52 bg-black p-5 rounded-2xl left-24`,
                               {marginHorizontal : "2%"}]}
                               onPress={() => navigation.navigate("CameraPage",route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>Scan My Disease</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Scan My Condition</Text>
         </TouchableOpacity>        
       </View>
 

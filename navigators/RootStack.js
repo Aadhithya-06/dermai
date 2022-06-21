@@ -18,6 +18,7 @@ import Results from './../screens/Results'
 import Record from './../screens/Record'
 import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/DoctorLanding'
+import DocRecords from './../screens/DocRecords'
 
 const Stack = createStackNavigator();
 
@@ -65,6 +66,7 @@ const RootStack = () => {
                 <Stack.Screen name="Record" component={Record}/>
                 <Stack.Screen name="PreLanding" component={PreLanding}/>
                 <Stack.Screen name="DoctorLanding" component={DoctorLanding}/>
+                <Stack.Screen name="DocRecords" component={DocRecords}/>
 
 
             </Stack.Navigator>
