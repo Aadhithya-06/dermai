@@ -4,7 +4,7 @@ import tw from 'tailwind-react-native-classnames'
 
 import axios from 'axios'
 
-const Record = ({navigation,route}) => {
+const DocRecords = ({navigation,route}) => {
 
   const [images, setImages] = useState(null);
   const {name, email} = route.params
@@ -30,12 +30,13 @@ const Record = ({navigation,route}) => {
 
   return ( 
     <View>
-      <Text style={tw `font-bold text-center py-28 text-4xl`}>My Records</Text>
+      <Text style={tw `font-bold text-center py-28 text-4xl`}>My Patient Records</Text>
 
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <View style={{bottom: 50,  backgroundColor: '#ECECEC', width: 325, height: 500}}>
-            <Text style={tw `font-semibold top-4 text-left text-xl`}>Date: 16/06/22</Text>
+            <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
+            <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
             <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 96%</Text>
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 4%</Text>
             <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
@@ -57,6 +58,6 @@ const Record = ({navigation,route}) => {
   )
 }
 
-export default Record
+export default DocRecords
 
 const styles = StyleSheet.create({})

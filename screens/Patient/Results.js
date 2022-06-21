@@ -13,7 +13,7 @@ const Results = ({navigation,route}) => {
             height:500,
             resizeMode: 'contain',
           }} 
-          source={require('./../../assets/drplogo1.png')}>
+          source={require('./../assets/drplogo1.png')}>
 
         </Image>
       </View>
@@ -28,7 +28,7 @@ const Results = ({navigation,route}) => {
         </Text> 
 
         <TouchableOpacity style={[
-                              tw `bottom-0 w-48 bg-black left-28 rounded-2xl`,
+                              tw `bottom-0 w-48 bg-black left-28 rounded-2xl p-4`,
                               {marginHorizontal : "2%"}]}
                            onPress={() => navigation.navigate("Welcome",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>

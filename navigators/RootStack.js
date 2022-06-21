@@ -9,7 +9,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from './../screens/Login'
 import Signup from './../screens/Signup'
-import Welcome from '../screens/Patient/Landing'
+import Welcome from '../screens/Patient/Welcome'
 import CameraPage from "../screens/Patient/CameraPage"
 import Security from '../screens/Patient/Security'
 import Faq from '../screens/Patient/Faq'

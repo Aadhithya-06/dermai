@@ -30,12 +30,12 @@ const Record = ({navigation,route}) => {
 
   return ( 
     <View>
-      <Text style={tw `font-bold text-center py-28 text-4xl`}>Records</Text>
+      <Text style={tw `font-bold text-center py-28 text-4xl`}>My Records</Text>
 
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <View style={{bottom: 50,  backgroundColor: '#ECECEC', width: 325, height: 500}}>
-            <Text style={tw `font-semibold top-4 text-left text-xl`}>16/06/22:</Text>
+            <Text style={tw `font-semibold top-4 text-left text-xl`}>Date: 16/06/22</Text>
             <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 96%</Text>
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 4%</Text>
             <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
@@ -44,7 +44,7 @@ const Record = ({navigation,route}) => {
 
         <View>
         <TouchableOpacity style={[
-                              tw `bottom-0 w-48 bg-black right-0 rounded-2xl`,
+                              tw `bottom-0 w-48 bg-black right-0 rounded-2xl p-4`,
                               {marginHorizontal : "2%"}]}
                            onPress={() => navigation.navigate("Welcome",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
