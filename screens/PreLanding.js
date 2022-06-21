@@ -24,14 +24,14 @@ const PreLanding = ({navigation, route}) => {
                               tw `absolute bottom-72 w-52 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("DoctorLanding", route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>I'm A Doctor</Text>
+          <Text style={tw `font-semibold text-center text-2xl text-white`}>I'm A Doctor/NHS Staff</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
                               tw `absolute bottom-36 w-52 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("Welcome", route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>I'm A Patient</Text>
+          <Text style={tw `font-semibold text-center text-2xl text-white`}>I'm A User</Text>
         </TouchableOpacity>        
       </View>
     </View>
