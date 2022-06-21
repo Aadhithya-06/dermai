@@ -41,47 +41,53 @@ const DoctorExcema = ({navigation,route}) => {
       <View>
         <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition is this?</Text>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <View style={{bottom: 50,  backgroundColor: '#ECECEC', width: 325, height: 500}}>
-              <Image  style={{width: "50%", height: '50%', top:40, left: 0}}
+          <View style={{bottom: 50,  backgroundColor: '#ECECEC', width: 375, height: 500}}>
+              <Image  style={{width: "48%", height: '50%', top:40, left: 0}}
                       source={{uri: images}}/>
-              <Image  style={{width: "50%", height: '50%', top:-210, left: 160}}
+              <Image  style={{width: "48%", height: '50%', top:-210, left: 190}}
                       source={{uri: images2}}/>
-          </View>   
-          <View>
-          <TouchableOpacity style={{bottom: 220, left:-63,  backgroundColor: '#000000', width: 125, height: 50, borderRadius:10}}
+          </View>  
+     
+
+          <View> 
+            <TouchableOpacity style={{bottom: 220, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
 
                              }}>
-            <Text style={tw `font-semibold text-center text-2xl text-white`}>Excema</Text>
-          </TouchableOpacity> 
-          <TouchableOpacity style={{bottom: 270, right:-63,  backgroundColor: '#000000', width: 125, height: 50, borderRadius:10}}
-                            onPress={() => {
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Excema</Text>
+            </TouchableOpacity>  
 
-                             }}>
-            <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
-          </TouchableOpacity> 
-          <TouchableOpacity style={{bottom: 245, left:-63,  backgroundColor: '#000000', width: 125, height: 50, borderRadius:10}}
-                             onPress={() => {
-  
-                             }}>
-            <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
-          </TouchableOpacity> 
-          <TouchableOpacity style={{bottom: 295, right:-63,  backgroundColor: '#000000', width: 125, height: 50, borderRadius:10}}
+            <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
 
                              }}>
-            <Text style={tw `font-semibold text-center text-xl text-white`}>Not the same</Text>
-          </TouchableOpacity> 
-          <TouchableOpacity style={{bottom: 200,  backgroundColor: '#000000', width: 125, height: 50}}
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+                             onPress={() => {
+
+                             }}>
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+                             onPress={() => {
+
+                             }}>
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Not Same</Text>
+            </TouchableOpacity> 
+
+            <TouchableOpacity style={{bottom: 200, left:0,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-            <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
-          </TouchableOpacity>    
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
+            </TouchableOpacity> 
           </View>
   
-        </View>
-  
-  
-      </View>
+       </View>
+
+    </View> 
+   
     )
   // } else {
   //   return ( 
