@@ -29,7 +29,7 @@ const DoctorLanding = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `absolute bottom-48 w-44 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("Welcome", route.params)}>
+                          onPress={() => navigation.navigate("DoctorQuiz", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Take Dermatology Quiz</Text>
         </TouchableOpacity>   
         
