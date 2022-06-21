@@ -52,17 +52,20 @@ const Welcome = ({navigation, route}) => {
 
       <View>
         <TouchableOpacity style={tw `absolute top-56 left-8`}>
-          <AntDesign name="setting" size={45} />
+          <AntDesign name="setting" size={45} /> 
+          <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={tw `absolute top-56 left-48`}
                      onPress={() => navigation.navigate("Faq",route.params)}>
           <AntDesign name="question" size={45} />
+          <Text style={tw `font-semibold`}>FAQs</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={tw `absolute top-56 right-8`}
                      onPress={() => navigation.navigate("Security",route.params)}>
           <FontAwesome5 name="user-lock" size={45} />
+          <Text style={tw `font-semibold`}>User Privacy</Text>
         </TouchableOpacity>
       </View>
 
