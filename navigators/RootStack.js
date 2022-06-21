@@ -13,6 +13,7 @@ import Welcome from './../screens/Patient/Welcome'
 import CameraPage from "../screens/Patient/CameraPage"
 import Security from './../screens/Patient/Security'
 import Faq from './../screens/Patient/Faq'
+import DocFaq from './../screens/Doctor/DocFaq'
 import Family from '../screens/Patient/Family'
 import Results from './../screens/Patient/Results'
 import Record from '../screens/Patient/Record'
@@ -20,6 +21,7 @@ import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/Doctor/Landing'
 import DocRecords from "../screens/Doctor/Records";
 import DoctorQuiz from "../screens/Doctor/Quiz"
+import DocPrivacy from "../screens/Doctor/DocPrivacy"
 
 const Stack = createStackNavigator();
 
@@ -62,6 +64,8 @@ const RootStack = () => {
                 <Stack.Screen name="Welcome" component={Welcome} />
                 <Stack.Screen name="Security" component={Security}/>
                 <Stack.Screen name="Faq" component={Faq}/>
+                <Stack.Screen name="DocFaq" component={DocFaq}/>
+                <Stack.Screen name="DocPrivacy" component={DocPrivacy}/>
                 <Stack.Screen name="Family" component={Family}/>
                 <Stack.Screen name="Results" component={Results}/>
                 <Stack.Screen name="Record" component={Record}/>

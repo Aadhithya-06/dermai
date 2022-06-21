@@ -83,6 +83,25 @@ const DoctorExcema = ({navigation,route}) => {
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
             </TouchableOpacity> 
           </View>
+
+          <View>
+        <TouchableOpacity style={tw `absolute top-56 left-8 items-center`}>
+          <AntDesign name="setting" size={45} /> 
+          <Text style={tw `font-semibold`}>Settings</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={tw `absolute top-56 left-48 items-center`}
+                     onPress={() => navigation.navigate("DocFaq",route.params)}>
+          <AntDesign name="question" size={45} />
+          <Text style={tw `font-semibold`}>FAQs</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={tw `absolute top-56 right-8 items-center`}
+                     onPress={() => navigation.navigate("Security",route.params)}>
+          <FontAwesome5 name="user-lock" size={45} />
+          <Text style={tw `font-semibold`}>User Privacy</Text>
+        </TouchableOpacity>
+      </View>
   
        </View>
 
