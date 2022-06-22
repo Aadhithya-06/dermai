@@ -63,7 +63,7 @@ const Welcome = ({navigation, route}) => {
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={tw `absolute top-56 left-48 items-center`}
+        <TouchableOpacity style={tw `absolute top-56 left-44 items-center`}
                      onPress={() => navigation.navigate("Faq",route.params)}>
           <AntDesign name="question" size={45} />
           <Text style={tw `font-semibold`}>FAQs</Text>

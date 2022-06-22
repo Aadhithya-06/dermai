@@ -5,17 +5,31 @@ import {AntDesign, FontAwesome5} from "@expo/vector-icons"
 
 
 const DoctorLanding = ({navigation, route}) => {
+
+  const {name, email} = route.params
+
   return (
     <View>
       <View style={tw `items-center bg-black h-1/2`}>
         <Image
            style={{
             width:500,
-            height:500,
+            height:530,
             resizeMode: 'contain',
           }} 
           source={require('./../../assets/drplogo1.png')}>
         </Image>
+
+        <TouchableOpacity style={[
+                              tw `absolute w-4 bg-black p-8 rounded-2xl left-40`,
+                              {marginHorizontal : "30%"}]}
+                          onPress={() => navigation.navigate("Login",route.params)}>
+          <Text style={tw `font-semibold text-center text-sm text-white`}>Log Out</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View>
+        <Text style={tw `font-bold text-center text-4xl top-8`}>{name || "Shrey Shah"}</Text>
       </View>
 
       <View style={tw `h-1/2 items-center`}>
@@ -38,7 +52,7 @@ const DoctorLanding = ({navigation, route}) => {
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>      
 
-        <TouchableOpacity style={tw `absolute top-80 left-48 items-center`}
+        <TouchableOpacity style={tw `absolute top-80 left-44 items-center`}
                      onPress={() => navigation.navigate("DocFaq",route.params)}>
           <AntDesign name="question" size={45} />
           <Text style={tw `font-semibold`}>FAQs</Text>
