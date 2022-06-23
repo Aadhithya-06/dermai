@@ -51,19 +51,19 @@ const Results = ({navigation,route}) => {
       </View>
 
       <View>
-        <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0, top:-15}]}
+        <TouchableOpacity style={[tw `absolute items-center`, {left: 15, top: -45}]}
                         onPress={() => navigation.navigate("Welcome",route.params)}>
           <Entypo name="home" size={45} /> 
           <Text style={tw `font-semibold`}>Main Menu</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[tw `absolute items-center`, {left: 100, top:-15}]}
+        <TouchableOpacity style={[tw `absolute items-center`, {left: 100, right: 100, top:-45}]}
                      onPress={() => navigation.navigate("Record",route.params)}>
           <Ionicons name="newspaper" size={45} />
           <Text style={tw `font-semibold`}>My Records</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[tw `absolute right-8 items-center`, {right: 0, top:-55}]}
+        <TouchableOpacity style={[tw `absolute items-center`, {right: 15, top:-45}]}
                      onPress={() => Linking.openURL("https://www.nhsapp.service.nhs.uk/login")}>
           <Fontisto name="doctor" size={45} />
           <Text style={tw `font-semibold`}>NHS Login</Text>

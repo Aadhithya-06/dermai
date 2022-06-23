@@ -34,12 +34,13 @@ const DoctorExcema = ({navigation,route}) => {
 
   const hookMethod = async () => {
     setQuestions(questions+1);
-    if(questions >= 5) {
-      const res = marks;
-      const q = questions;
-      const credentials = {score: res}
+    if(questions > 4) {
+      console.log(marks);
+      // const res = marks;
+      // const q = questions;
+      const credentials = {score: String(marks)}
       const url = 'https://secure-forest-32038.herokuapp.com/quizSubmit'
-      axios.post(url,credentials);
+      axios.post(url,credentials).then(()=>{}).catch(error => {});
       setQuestions(0);
       setMarks(0);
       navigation.navigate("DoctorStats", route.params);
@@ -131,6 +132,7 @@ const DoctorExcema = ({navigation,route}) => {
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               setMarks(marks + 1);
+                              console.log(marks);
                               hookMethod();
                               getPicture();
                              }}>

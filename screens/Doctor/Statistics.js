@@ -1,19 +1,20 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import tw from 'tailwind-react-native-classnames'
 import axios from 'axios'
 import {Fontisto, Entypo, Ionicons} from "@expo/vector-icons"
 
 
 const DoctorStats = ({navigation, route}) => {
-
+    const [marks, setMarks] = useState("");
     const questions = 5;
-    var marks = 0;
     const url = 'https://secure-forest-32038.herokuapp.com/quizGet';
-    
+    console.log(marks);
     axios.post(url).then(response => {
-      console.log(response.data);
-      marks = response.data;
+      // console.log(response.data);
+      const {quiz} = response.data;
+      // console.log(quiz);
+      setMarks(quiz);
     });
 
     if(marks == undefined) {
