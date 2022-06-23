@@ -4,6 +4,8 @@ import tw from 'tailwind-react-native-classnames'
 
 import axios from 'axios'
 import { CardStyleInterpolators } from '@react-navigation/stack'
+import {Fontisto, Entypo, Ionicons} from "@expo/vector-icons"
+
 
 const DoctorExcema = ({navigation,route}) => {
 
@@ -144,10 +146,11 @@ const DoctorExcema = ({navigation,route}) => {
               <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={{bottom: 125, left:0,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
-            </TouchableOpacity> 
+            <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:-35}]}
+                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+          <Entypo name="home" size={45} /> 
+          <Text style={tw `font-semibold`}>Main Menu</Text>
+        </TouchableOpacity>  
         </View>
 
      </View>

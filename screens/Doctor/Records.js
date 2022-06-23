@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity,Image} from 'react-native'
 import React, {useState,useEffect} from 'react'
 import tw from 'tailwind-react-native-classnames'
+import {Fontisto, Entypo, Ionicons} from "@expo/vector-icons"
 
 import axios from 'axios'
 
@@ -42,15 +43,23 @@ const DocRecords = ({navigation,route}) => {
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Normal Skin - 20%</Text>
             <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
                     source={{uri: images}}/>
-        </View>   
+        </View>  
 
         <View>
         <TouchableOpacity style={[
-                              tw `bottom-0 w-48 bg-black right-0 rounded-2xl p-4`,
-                              {marginHorizontal : "2%"}]}
+                              tw ` w-80 bg-black right-0 rounded-2xl p-3`,
+                              {top: -100 ,marginHorizontal : "2%"}]}
                            onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
+          <Text style={tw `font-semibold text-center text-2xl text-white`}>Respond to diagnosis</Text>
         </TouchableOpacity>     
+
+
+        <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:-5}]}
+                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+          <Entypo name="home" size={45} /> 
+          <Text style={tw `font-semibold`}>Main Menu</Text>
+        </TouchableOpacity> 
+
         </View>
       </View>
 
