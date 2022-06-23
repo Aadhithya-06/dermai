@@ -28,7 +28,7 @@ const DoctorLanding = ({navigation, route}) => {
       </View>
 
       <View>
-        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 60, color: "#ffffff"}]}>{"Dr. " + name || "Shrey Shh"}</Text>
+        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 60, color: "#ffffff"}]}>{"Dr. Daftary" || "Shrey Shh"}</Text>
       </View>
 
       <View style={tw `h-1/2 items-center`}>
@@ -52,18 +52,18 @@ const DoctorLanding = ({navigation, route}) => {
           <Text style={tw `font-semibold text-center text-xl text-white`}>Dermatology Quiz Statistics</Text>
         </TouchableOpacity>   
         
-        <TouchableOpacity style={tw `absolute top-80 left-8 items-center`}>
+        <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -117.5}]}>
           <AntDesign name="setting" size={45} /> 
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>      
 
-        <TouchableOpacity style={tw `absolute top-80 left-44 items-center`}
+        <TouchableOpacity style={[tw `items-center`, {right:0, bottom: -55}]}
                      onPress={() => navigation.navigate("DocFaq",route.params)}>
           <AntDesign name="question" size={45} />
           <Text style={tw `font-semibold`}>FAQs</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={tw `absolute top-80 right-8 items-center`}
+        <TouchableOpacity style={[tw `items-center`, {right:-120, bottom: 7.5}]}
                      onPress={() => navigation.navigate("DocPrivacy",route.params)}>
           <FontAwesome5 name="user-lock" size={45} />
           <Text style={tw `font-semibold`}>User Privacy</Text>

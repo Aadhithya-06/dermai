@@ -29,18 +29,28 @@ const DoctorExcema = ({navigation,route}) => {
               }
            })
          }
-  const makeZero = async () => {
-    setQuestions(0);
-    setMarks(0);
+
+  const hookMethod = async () => {
+    setQuestions(questions+1);
+    if(questions >= 5) {
+      const res = marks;
+      const q = questions;
+      const credentials = {score: res}
+      const url = 'https://secure-forest-32038.herokuapp.com/quizSubmit'
+      axios.post(url,credentials);
+      setQuestions(0);
+      setMarks(0);
+      navigation.navigate("DoctorStats", route.params);
+    }
   }
+
    useEffect(() => {
           getPicture();
-          makeZero();
       }, [])
 
   // if quiztype is 0: what condition is it?
   // if quiztype is 1: are these the same condition?
-  if (quizType == 0) {
+  if (quizType == 2) {
     return ( 
       <View>
         <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition is this? {questions}/5</Text>
@@ -58,18 +68,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 220, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               setMarks(marks + 1);
-                              setQuestions(questions + 1);
-                              if(questions >= 5) {
-                                // instead of this redirect to stats page
-                                const res = marks;
-                                const q = questions;
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                                // alert("You got a: " + marks + " out of " + questions);
- 
-                              }
+                              hookMethod();
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Excema</Text>
@@ -77,15 +76,7 @@ const DoctorExcema = ({navigation,route}) => {
 
             <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setQuestions(questions+1);
-                              if(questions >= 5) {
-                                const res = marks;
-                                const q = questions;
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                              }
+                              hookMethod();
                               alert("That was the incorrect answer, the answer is Excema")
                               getPicture();
                              }}>
@@ -94,16 +85,7 @@ const DoctorExcema = ({navigation,route}) => {
 
             <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setQuestions(questions+1);
-                              if(questions >= 5) {
-                                const res = marks;
-                                const q = questions;
-
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                              }
+                              hookMethod();
                               alert("That was the incorrect answer, the answer is Excema")
                               getPicture();
                              }}>
@@ -112,15 +94,7 @@ const DoctorExcema = ({navigation,route}) => {
 
             <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setQuestions(questions+1);
-                              if(questions == 5) {
-                                const res = marks;
-                                const q = questions;
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                              }
+                              hookMethod();
                               alert("That was the incorrect answer, the answer is Excema")
                               getPicture();
                              }}>
@@ -155,15 +129,7 @@ const DoctorExcema = ({navigation,route}) => {
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               setMarks(marks + 1);
-                              setQuestions(questions + 1);
-                              if(questions >= 5) {
-                                const res = marks;
-                                const q = questions;
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                              }
+                              hookMethod();
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Yes</Text>
@@ -171,15 +137,7 @@ const DoctorExcema = ({navigation,route}) => {
 
             <TouchableOpacity style={{bottom: 290, left:100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setQuestions(questions+1);
-                              if(questions >= 5) {
-                                const res = marks;
-                                const q = questions;
-                                navigation.navigate("DoctorStats", {
-                                  questions: q,
-                                  marks: res,
-                                });
-                              }
+                              hookMethod();
                               alert("That was the incorrect answer, these are both examples of Excema")
                               getPicture();
                              }}>

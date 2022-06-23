@@ -33,17 +33,25 @@ const Welcome = ({navigation, route}) => {
         <Text style={tw `font-bold text-center py-24 text-4xl`}>{name || "Shrey Shah"}</Text>
       </View>
 
-      <View style={tw `justify-center items-center`}>
+      <View style={tw `justify-center`}>
         <TouchableOpacity style={[
-                              tw `absolute w-80 bg-black p-5 rounded-2xl `,
-                              {marginHorizontal : "30%"}]}
+                              tw `absolute w-52 bg-black p-5 rounded-2xl`,
+                              {left: 75, marginHorizontal : "2%"}]}
                           onPress={() => navigation.navigate("Record",route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>My Records</Text>
         </TouchableOpacity> 
+
+        {/* <TouchableOpacity style={[
+                              tw `absolute w-52 bg-black p-4 rounded-2xl left-24`,
+                              {marginHorizontal : "30%"}]}
+                              onPress={() => navigation.navigate("Family",route.params)}>
+                              
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Add Family Skin Conditions</Text>
+        </TouchableOpacity>  */}
   
         <TouchableOpacity style={[
-                              tw `absolute top-20 w-52 bg-black p-5 rounded-2xl `,
-                              {marginHorizontal : "2%"}]}
+                              tw `absolute top-20 w-52 bg-black p-5 rounded-2xl`,
+                              {left: 75, marginHorizontal : "2%"}]}
                               onPress={() => navigation.navigate("CameraPage",route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Scan My Condition</Text>
         </TouchableOpacity>        

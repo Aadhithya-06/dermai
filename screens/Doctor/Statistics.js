@@ -1,10 +1,19 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import tw from 'tailwind-react-native-classnames'
+import axios from 'axios'
 
 const DoctorStats = ({navigation, route}) => {
-    const { questions, marks } = route.params;
-    console.log(route.params);
+
+    const questions = 5;
+    var marks = 0;
+    const url = 'https://secure-forest-32038.herokuapp.com/quizGet';
+    
+    axios.post(url).then(response => {
+      console.log(response.data);
+      marks = response.data;
+    });
+
     if(marks == undefined) {
         return (
           <View>
