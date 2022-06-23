@@ -62,7 +62,6 @@ export default function CameraPage({navigation, route}) {
           let data = await response.json();
           if (data.secure_url) {
             alert('Upload successful');
-            const credentials = {email: email,images: data.secure_url}
             const url = 'https://secure-forest-32038.herokuapp.com/upload'
             console.log(credentials)
             axios.post(url,credentials).then((response) =>{
