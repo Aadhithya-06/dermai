@@ -37,8 +37,9 @@ const DocRecords = ({navigation,route}) => {
         <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 325, height: 500}}>
             <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
             <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
-            <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 96%</Text>
-            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 4%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 90%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 32%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Normal Skin - 20%</Text>
             <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
                     source={{uri: images}}/>
         </View>   
