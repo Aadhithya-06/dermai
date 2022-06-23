@@ -28,7 +28,7 @@ const PreLanding = ({navigation, route}) => {
 
       <View style={tw `h-1/2`}>
         <TouchableOpacity style={[
-                              tw `absolute bottom-72 w-52 bg-black p-4 rounded-2xl`,
+                              tw `w-52 absolute bottom-72 bg-black p-4 rounded-2xl`,
                               {marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("DoctorLanding", route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>I'm A Doctor</Text>

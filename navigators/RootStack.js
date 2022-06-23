@@ -22,6 +22,7 @@ import DoctorLanding from './../screens/Doctor/Landing'
 import DocRecords from "../screens/Doctor/Records";
 import DoctorQuiz from "../screens/Doctor/Quiz"
 import DocPrivacy from "../screens/Doctor/DocPrivacy"
+import DoctorStats from "../screens/Doctor/Statistics"
 
 const Stack = createStackNavigator();
 
@@ -73,7 +74,7 @@ const RootStack = () => {
                 <Stack.Screen name="DoctorLanding" component={DoctorLanding}/>
                 <Stack.Screen name="DocRecords" component={DocRecords}/>
                 <Stack.Screen name="DoctorQuiz" component={DoctorQuiz}/>
-
+                <Stack.Screen name="DoctorStats" component={DoctorStats}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

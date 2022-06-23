@@ -14,7 +14,7 @@ const Results = ({navigation,route}) => {
 
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <View style={{bottom: 80,  backgroundColor: '#ECECECEC', width: 350, height: 550}}>
+        <View style={{bottom: 80,  backgroundColor: '#FFFFFFEC', width: 350, height: 550}}>
             <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
             <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
             

@@ -10,7 +10,7 @@ const DocFaq = ({navigation,route}) => {
 
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <View style={{bottom: 50,  backgroundColor: '#ECECEC', width: 300, height: 500}}>
+        <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 300, height: 500}}>
           <Text style={tw `font-semibold top-4 text-left text-xl`}>Q) How does the app work?</Text>
           <Text style={tw `top-4 text-left text-lg`}>You can use the basic functionality of the app by clicking a picture of the skin condition and getting a diagnosis.</Text>
 

@@ -3,7 +3,6 @@ import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import {AntDesign, FontAwesome5} from "@expo/vector-icons"
 
-
 const DoctorLanding = ({navigation, route}) => {
 
   const {name, email} = route.params
@@ -23,28 +22,34 @@ const DoctorLanding = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `absolute w-4 bg-black p-8 rounded-2xl left-40`,
                               {marginHorizontal : "30%"}]}
-                          onPress={() => navigation.navigate("Login",route.params)}>
+                          onPress={() => navigation.navigate("Login", route.params)}>
           <Text style={tw `font-semibold text-center text-sm text-white`}>Log Out</Text>
         </TouchableOpacity>
       </View>
 
       <View>
-        <Text style={tw `font-bold text-center text-4xl top-8`}>{name || "Shrey Shah"}</Text>
+        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 60, color: "#ffffff"}]}>{"Dr. " + name || "Shrey Shh"}</Text>
       </View>
 
       <View style={tw `h-1/2 items-center`}>
-        <TouchableOpacity style={[
-                              tw `absolute bottom-80 w-80 bg-black p-4 rounded-2xl`,
-                              {marginHorizontal : "25%"}]}
+      <TouchableOpacity style={[
+                              tw `w-80 bg-black p-4 rounded-2xl`,
+                              {bottom: -20, marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("DocRecords", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient Records</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
-                              tw `absolute bottom-48 w-44 bg-black p-4 rounded-2xl`,
-                              {marginHorizontal : "15%"}]}
+                              tw `w-80 bg-black p-4 rounded-2xl`,
+                              {bottom: -50, marginHorizontal : "15%"}]}
                           onPress={() => navigation.navigate("DoctorQuiz", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Take Dermatology Quiz</Text>
+        </TouchableOpacity>   
+        <TouchableOpacity style={[
+                              tw `w-80 bg-black p-4 rounded-2xl`,
+                              {bottom: -80, marginHorizontal : "15%"}]}
+                          onPress={() => navigation.navigate("DoctorStats", route.params)}>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Dermatology Quiz Statistics</Text>
         </TouchableOpacity>   
         
         <TouchableOpacity style={tw `absolute top-80 left-8 items-center`}>
