@@ -73,7 +73,7 @@ const DocResponse = ({navigation, route}) => {
       return (
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 325, height: 500}}>
-            <Image  style={{width: "60%", height: '40%', top:150, left: 60}}
+            <Image  style={{width: "60%", height: '45%', top:150, left: 60}}
                     source={{uri: images}}/>
         </View>  
 
@@ -82,7 +82,7 @@ const DocResponse = ({navigation, route}) => {
                 initialValues={{diagnosis: ''}}
                 onSubmit={(values) => {
                     if(values.diagnosis == '') {
-                        alert('Please fill the diagnosis');
+                        Alert.alert("We cannot have an empty field", 'Please fill the diagnosis');
                     } else {
                         setDiagnosis(values.diagnosis);
                         sendDiagnosis()
@@ -109,23 +109,23 @@ const DocResponse = ({navigation, route}) => {
         </View>
 
         <View>
-            <Text style={[tw `font-bold text-center py-10 text-2xl`, {top:-70}]}>Do you agree that the skin is: Normal Skin?</Text>
+            <Text style={[tw `font-bold text-center py-10 text-2xl`, {top:-70}]}>Do you confirm our diagnosis: No skin anomaly?</Text>
         </View>
 
-        <TouchableOpacity style={{bottom: 90, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+        <StyledButton style={{bottom: 90, left:-90,  backgroundColor: '#000000', width: 150, height: 60}}
                              onPress={() => {approveDiagnosis()}}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Yes</Text>
-            </TouchableOpacity>  
+              <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>Yes</ButtonText>
+            </StyledButton>  
 
-            <TouchableOpacity style={{bottom: 140, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+            <StyledButton style={{bottom: 160, left:80,  backgroundColor: '#000000', width: 150, height: 60}}
                              onPress={() => {disapproveDiagnosis()}}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>
-            </TouchableOpacity> 
+              <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>No</ButtonText>
+            </StyledButton> 
 
 
         <View>
-                      <TouchableOpacity style={styles.button}
-                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+            <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate("DoctorLanding",route.params)}>
           <Entypo name="home" size={45} /> 
           <Text style={tw `font-semibold right-3` }>Main Menu</Text>
         </TouchableOpacity>  
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
       justifyContent: "flex-start"
     },
     button:{
-        top:0,
+        top:-115,
         alignContent:'center',
         left: 10
     },

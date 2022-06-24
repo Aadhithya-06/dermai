@@ -50,7 +50,7 @@ const DocRecords = ({navigation,route}) => {
                               tw ` w-80 bg-black right-0 rounded-2xl p-3`,
                               {top: -100 ,marginHorizontal : "2%"}]}
                            onPress={() => navigation.navigate("DocResponse",route.params)}>
-          <Text style={tw `font-semibold text-center text-2xl text-white`}>Respond to diagnosis</Text>
+          <Text style={tw `font-semibold text-center text-2xl text-white`}>Confirm diagnosis</Text>
         </TouchableOpacity>     
 
 

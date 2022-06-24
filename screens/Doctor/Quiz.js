@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity,Image, ImageEditor} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity,Image, ImageEditor, Alert } from 'react-native'
 import React, {useState,useEffect} from 'react'
 import tw from 'tailwind-react-native-classnames'
+
 
 import axios from 'axios'
 import { CardStyleInterpolators } from '@react-navigation/stack'
@@ -48,6 +49,7 @@ const DoctorExcema = ({navigation,route}) => {
   }
 
    useEffect(() => {
+          Alert.alert("Quiz Rules", "If you have the correct answer, we will go straight to the next questions. If you get a question wrong, you will be told what the correct answer is.");
           getPicture();
       }, [])
 
@@ -57,7 +59,6 @@ const DoctorExcema = ({navigation,route}) => {
     return ( 
       <View>
         <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition is this? {questions}/5</Text>
-        {/* <Text style={tw `font-bold text-center py-28 text-4xl`}></Text> */}
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <View style={{bottom: 50, width: 375, height: 500}}>
               <Image  style={{width: "48%", height: '50%', top:40, left: 0}}
@@ -65,7 +66,7 @@ const DoctorExcema = ({navigation,route}) => {
               <Image  style={{width: "48%", height: '50%', top:-210, left: 190}}
                       source={{uri: images2}}/>
           </View>  
-     
+          
 
           <View> 
             <TouchableOpacity style={{bottom: 220, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
@@ -80,7 +81,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              alert("That was the incorrect answer, the answer is Excema")
+                              Alert.alert("Incorrect Answer", "The answer is Excema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
@@ -89,7 +90,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              alert("That was the incorrect answer, the answer is Excema")
+                              Alert.alert("Incorrect Answer", "The answer is Excema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
@@ -98,16 +99,17 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              alert("That was the incorrect answer, the answer is Excema")
+                              Alert.alert("Incorrect Answer", "The answer is Excema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Other</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={{bottom: 220, left:0,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
-            </TouchableOpacity> 
+            <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:-35}]}
+                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+          <Entypo name="home" size={45} /> 
+          <Text style={tw `font-semibold`}>Main Menu</Text>
+        </TouchableOpacity>  
           </View>
   
        </View>
@@ -141,7 +143,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              alert("That was the incorrect answer, these are both examples of Excema")
+                              Alert.alert("Incorrect Answer", "These are both examples of Excema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>

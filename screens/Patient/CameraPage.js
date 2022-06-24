@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
 import Constants from 'expo-constants';
 import { Camera, CameraType } from 'expo-camera';
 import * as MediaLibrary from 'expo-media-library';
@@ -20,6 +20,7 @@ export default function CameraPage({navigation, route}) {
   
 
   useEffect(() => {
+    Alert.alert("Keep camera 4 inches (10cm) away from affected area");
     (async () => {
       MediaLibrary.requestPermissionsAsync();
       const cameraStatus = await Camera.requestCameraPermissionsAsync();
@@ -41,6 +42,7 @@ export default function CameraPage({navigation, route}) {
   };
 
   const savePicture = async () => {
+  //  Alert.alert("Please wait while image uploads");
    var source = DATA.base64
     if (image) {
       let base64Img = `data:image/jpg;base64,${source}`;
@@ -70,13 +72,14 @@ export default function CameraPage({navigation, route}) {
               if (status !== "SUCCESS"){
                   console.log(status)
               } else{
+                
                   navigation.navigate("Results",route.params)
               }
           })
           }
         })
         .catch(err => {
-          alert('Cannot upload');
+          Alert.alert('Cannot upload');
           console.log(err);
         });
 

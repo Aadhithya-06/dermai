@@ -58,8 +58,9 @@ const Welcome = ({navigation, route}) => {
       </View>
 
       <View>
-        <TouchableOpacity style={[tw `absolute items-center`, {left: 15, bottom:-270}]}>
-          <AntDesign name="setting" size={45} /> 
+      <TouchableOpacity style={[tw `absolute items-center`, {left: 15, bottom:-270}]}
+                     onPress={() => navigation.navigate("Faq",route.params)}>
+          <AntDesign name="setting" size={45} />
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>
 
