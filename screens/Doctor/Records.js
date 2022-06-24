@@ -38,9 +38,9 @@ const DocRecords = ({navigation,route}) => {
         <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 325, height: 500}}>
             <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
             <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
-            <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 90%</Text>
-            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Keloids - 32%</Text>
-            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Normal Skin - 20%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Normal Skin - 90%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Psoriasis - 3%</Text>
+            <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Eczema - 2%</Text>
             <Image  style={{width: "40%", height: '40%', top:40, left: 90}}
                     source={{uri: images}}/>
         </View>  
@@ -49,7 +49,7 @@ const DocRecords = ({navigation,route}) => {
         <TouchableOpacity style={[
                               tw ` w-80 bg-black right-0 rounded-2xl p-3`,
                               {top: -100 ,marginHorizontal : "2%"}]}
-                           onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+                           onPress={() => navigation.navigate("DocResponse",route.params)}>
           <Text style={tw `font-semibold text-center text-2xl text-white`}>Respond to diagnosis</Text>
         </TouchableOpacity>     
 

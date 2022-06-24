@@ -18,16 +18,18 @@ const Results = ({navigation,route}) => {
             <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
             <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
             
+            <TouchableOpacity style={tw `top-4`}>
+              <Text style={tw `top-80 left-32 text-left text-xl`}>Normal Skin (90%)</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity style={tw `bottom-4`}
                               onPress={() => Linking.openURL("https://www.nhs.uk/conditions/psoriasis/")}>
-              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Psoriasis (90%)</Text>
+              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Psoriasis (3%)</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL("https://www.nhs.uk/conditions/keloid-scars/")}>
-              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Keloids (32%)</Text>
+            <TouchableOpacity onPress={() => Linking.openURL("https://www.nhs.uk/conditions/atopic-eczema/")}>
+              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Eczema (2%)</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={tw `top-4`}>
-              <Text style={tw `top-80 left-32 text-left text-xl`}>Normal Skin (20%)</Text>
-            </TouchableOpacity>
+
             
             <Image
               style={{

@@ -26,7 +26,8 @@ const DoctorExcema = ({navigation,route}) => {
                   console.log(message)
                } else{
                  setImages(image1)
-                 setImages2(image2)
+                 setImages2(image2);
+                 console.log(quizType);
                  setQuizType(quizType);
               }
            })
@@ -35,7 +36,6 @@ const DoctorExcema = ({navigation,route}) => {
   const hookMethod = async () => {
     setQuestions(questions+1);
     if(questions > 4) {
-      console.log(marks);
       // const res = marks;
       // const q = questions;
       const credentials = {score: String(marks)}
@@ -53,7 +53,7 @@ const DoctorExcema = ({navigation,route}) => {
 
   // if quiztype is 0: what condition is it?
   // if quiztype is 1: are these the same condition?
-  if (quizType == 2) {
+  if (quizType == 0) {
     return ( 
       <View>
         <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition is this? {questions}/5</Text>
@@ -104,7 +104,7 @@ const DoctorExcema = ({navigation,route}) => {
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Other</Text>
             </TouchableOpacity> 
 
-            <TouchableOpacity style={{bottom: 200, left:0,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+            <TouchableOpacity style={{bottom: 220, left:0,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => navigation.navigate("DoctorLanding",route.params)}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Main Menu</Text>
             </TouchableOpacity> 
@@ -132,7 +132,6 @@ const DoctorExcema = ({navigation,route}) => {
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               setMarks(marks + 1);
-                              console.log(marks);
                               hookMethod();
                               getPicture();
                              }}>
