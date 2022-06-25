@@ -36,20 +36,20 @@ const DoctorLanding = ({navigation, route}) => {
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -20, marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("DocRecords", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient Records</Text>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient's Records</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -50, marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("DoctorQuiz", route.params)}>
+                          onPress={() => navigation.navigate("QuizLanding", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Take Dermatology Quiz</Text>
         </TouchableOpacity>   
         <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -80, marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("DoctorStats", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>Dermatology Quiz Statistics</Text>
+                          onPress={() => navigation.navigate("Study", route.params)}>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Study the Difference</Text>
         </TouchableOpacity>   
         
         <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -117.5}]}>

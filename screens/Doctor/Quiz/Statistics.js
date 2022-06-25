@@ -33,11 +33,11 @@ const DoctorStats = ({navigation, route}) => {
           <Text style={tw `font-bold text-center py-28 text-4xl`}> You got {marks} out of {questions} </Text>
         </View>
         <View>
-                      <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:230}]}
-                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-          <Entypo name="home" size={45} /> 
-          <Text style={tw `font-semibold`}>Main Menu</Text>
-        </TouchableOpacity>  
+          <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:230}]}
+                          onPress={() => navigation.navigate("DoctorLanding",route.params)}>
+            <Entypo name="home" size={45} /> 
+            <Text style={tw `font-semibold`}>Main Menu</Text>
+          </TouchableOpacity>  
         </View>
         </View>
       )

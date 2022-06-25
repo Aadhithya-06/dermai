@@ -11,6 +11,7 @@ import Login from './../screens/Login'
 import Signup from './../screens/Signup'
 import Welcome from './../screens/Patient/Welcome'
 import CameraPage from "../screens/Patient/CameraPage"
+import SubmitDetails from "../screens/Patient/SubmitDetails"
 import Security from './../screens/Patient/Security'
 import Faq from './../screens/Patient/Faq'
 import DocFaq from './../screens/Doctor/DocFaq'
@@ -19,11 +20,14 @@ import Results from './../screens/Patient/Results'
 import Record from '../screens/Patient/Record'
 import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/Doctor/Landing'
-import DocRecords from "../screens/Doctor/Records";
-import DoctorQuiz from "../screens/Doctor/Quiz"
+import DocRecords from "../screens/Doctor/Respond/Records";
+import DoctorQuiz from "../screens/Doctor/Quiz/Quiz"
 import DocPrivacy from "../screens/Doctor/DocPrivacy"
-import DoctorStats from "../screens/Doctor/Statistics"
-import DocResponse from "../screens/Doctor/DocResponse";
+import DoctorStats from "../screens/Doctor/Quiz/Statistics"
+import DocResponse from "../screens/Doctor/Respond/DocResponse";
+import QuizLanding from "../screens/Doctor/Quiz/QuizLanding";
+import Study from '../screens/Doctor/Study/Study'
+import MoreConditions from '../screens/Doctor/Study/MoreConditions'
 
 const Stack = createStackNavigator();
 
@@ -77,6 +81,10 @@ const RootStack = () => {
                 <Stack.Screen name="DocResponse" component={DocResponse}/>
                 <Stack.Screen name="DoctorQuiz" component={DoctorQuiz}/>
                 <Stack.Screen name="DoctorStats" component={DoctorStats}/>
+                <Stack.Screen name="SubmitDetails" component={SubmitDetails}/>
+                <Stack.Screen name="QuizLanding" component={QuizLanding}/>
+                <Stack.Screen name="Study" component={Study}/>
+                <Stack.Screen name="MoreConditions" component={MoreConditions}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

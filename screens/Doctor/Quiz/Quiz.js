@@ -28,7 +28,6 @@ const DoctorExcema = ({navigation,route}) => {
                } else{
                  setImages(image1)
                  setImages2(image2);
-                 console.log(quizType);
                  setQuizType(quizType);
               }
            })

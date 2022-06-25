@@ -22,7 +22,7 @@ import {
     ExtraView,
     TextLink,
     TextLinkContent
-} from './../../components/styles'
+} from '../../../components/styles'
 
 const DocResponse = ({navigation, route}) => {
 

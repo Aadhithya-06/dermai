@@ -72,8 +72,7 @@ export default function CameraPage({navigation, route}) {
               if (status !== "SUCCESS"){
                   console.log(status)
               } else{
-                
-                  navigation.navigate("Results",route.params)
+                  navigation.navigate("SubmitDetails",route.params)
               }
           })
           }
