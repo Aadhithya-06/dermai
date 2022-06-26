@@ -21,6 +21,7 @@ import Record from '../screens/Patient/Record'
 import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/Doctor/Landing'
 import DocRecords from "../screens/Doctor/Respond/Records";
+import RecordsLanding from "../screens/Doctor/Respond/RecordsLanding";
 import DoctorQuiz from "../screens/Doctor/Quiz/Quiz"
 import DocPrivacy from "../screens/Doctor/DocPrivacy"
 import DoctorStats from "../screens/Doctor/Quiz/Statistics"
@@ -85,6 +86,8 @@ const RootStack = () => {
                 <Stack.Screen name="QuizLanding" component={QuizLanding}/>
                 <Stack.Screen name="Study" component={Study}/>
                 <Stack.Screen name="MoreConditions" component={MoreConditions}/>
+                <Stack.Screen name="RecordsLanding" component={RecordsLanding}/>
+
             </Stack.Navigator>
         </NavigationContainer>
     )

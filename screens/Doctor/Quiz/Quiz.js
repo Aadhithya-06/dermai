@@ -57,7 +57,7 @@ const DoctorExcema = ({navigation,route}) => {
   if (quizType == 0) {
     return ( 
       <View>
-        <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition is this? {questions}/5</Text>
+        <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition are these? {questions}/5</Text>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <View style={{bottom: 50, width: 375, height: 500}}>
               <Image  style={{width: "48%", height: '50%', top:40, left: 0}}

@@ -31,7 +31,7 @@ const DocRecords = ({navigation,route}) => {
 
   return ( 
     <View>
-      <Text style={tw `font-bold text-center py-28 text-4xl`}>My Patient Records</Text>
+      <Text style={tw `font-bold text-center py-28 text-4xl`}>My Patients' Records</Text>
 
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>

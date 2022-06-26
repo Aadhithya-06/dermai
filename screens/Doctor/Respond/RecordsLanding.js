@@ -3,7 +3,7 @@ import React from 'react'
 import tw from 'tailwind-react-native-classnames'
 import {AntDesign, FontAwesome5} from "@expo/vector-icons"
 
-const DoctorLanding = ({navigation, route}) => {
+const RecordsLanding = ({navigation, route}) => {
 
   const {name, email} = route.params
 
@@ -16,7 +16,7 @@ const DoctorLanding = ({navigation, route}) => {
             height:530,
             resizeMode: 'contain',
           }} 
-          source={require('./../../assets/drplogo1.png')}>
+          source={require('./../../../assets/drplogo1.png')}>
         </Image>
 
         <TouchableOpacity style={[
@@ -27,30 +27,21 @@ const DoctorLanding = ({navigation, route}) => {
         </TouchableOpacity>
       </View>
 
-      <View>
-        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 60, color: "#ffffff"}]}>{"Dr. Daftary" || "Shrey Shh"}</Text>
-      </View>
-
       <View style={tw `h-1/2 items-center`}>
       <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -20, marginHorizontal : "25%"}]}
-                          onPress={() => navigation.navigate("RecordsLanding", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>My Patient's Records</Text>
+                          onPress={() => navigation.navigate("DocRecords", route.params)}>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Diagnoses To Confirm</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -50, marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("QuizLanding", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>Take Dermatology Quiz</Text>
+                          onPress={() => navigation.navigate("ConfirmedRecords", route.params)}>
+          <Text style={tw `font-semibold text-center text-xl text-white`}>Confirmed Diagnoses</Text>
         </TouchableOpacity>   
-        <TouchableOpacity style={[
-                              tw `w-80 bg-black p-4 rounded-2xl`,
-                              {bottom: -80, marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("Study", route.params)}>
-          <Text style={tw `font-semibold text-center text-xl text-white`}>Study Material</Text>
-        </TouchableOpacity>   
+ 
         
         <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -117.5}]}>
           <AntDesign name="setting" size={45} /> 
@@ -74,6 +65,6 @@ const DoctorLanding = ({navigation, route}) => {
   )
 }
 
-export default DoctorLanding
+export default RecordsLanding
 
 const styles = StyleSheet.create({})
