@@ -74,13 +74,13 @@ const DoctorExcema = ({navigation,route}) => {
                               hookMethod();
                               getPicture();
                              }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Excema</Text>
+              <Text style={tw `font-semibold text-center text-2xl text-white`}>Eczema</Text>
             </TouchableOpacity>  
 
             <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Excema");
+                              Alert.alert("Incorrect Answer", "The answer is Eczema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
@@ -89,7 +89,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Excema");
+                              Alert.alert("Incorrect Answer", "The answer is Eczema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
@@ -98,7 +98,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Excema");
+                              Alert.alert("Incorrect Answer", "The answer is Eczema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Other</Text>
@@ -142,7 +142,7 @@ const DoctorExcema = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "These are both examples of Excema");
+                              Alert.alert("Incorrect Answer", "These are both examples of Eczema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>

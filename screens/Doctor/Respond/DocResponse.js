@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image,TextInput} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image,TextInput, Alert} from 'react-native'
 import React, {useState,useEffect} from 'react'
 import tw from 'tailwind-react-native-classnames'
 import axios from 'axios'
@@ -113,12 +113,12 @@ const DocResponse = ({navigation, route}) => {
         </View>
 
         <StyledButton style={{bottom: 90, left:-90,  backgroundColor: '#000000', width: 150, height: 60}}
-                             onPress={() => {approveDiagnosis()}}>
+                             onPress={() => {approveDiagnosis(); Alert.alert("Thank you", "Your Diagnosis Has Been Recorded"); navigation.navigate("RecordsLanding", route.params)}}>
               <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>Yes</ButtonText>
             </StyledButton>  
 
             <StyledButton style={{bottom: 160, left:80,  backgroundColor: '#000000', width: 150, height: 60}}
-                             onPress={() => {disapproveDiagnosis()}}>
+                            onPress={() => {disapproveDiagnosis(); Alert.alert("Thank you", "Your Diagnosis Has Been Recorded"); navigation.navigate("RecordsLanding", route.params)}}>
               <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>No</ButtonText>
             </StyledButton> 
 

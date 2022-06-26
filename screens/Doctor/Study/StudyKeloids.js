@@ -7,7 +7,7 @@ import { CardStyleInterpolators } from '@react-navigation/stack'
 import {Fontisto, Entypo, Ionicons} from "@expo/vector-icons"
 
 
-const Study = ({navigation,route}) => {
+const StudyKeloids = ({navigation,route}) => {
     return (
         <View>
             <View style={{height: 110, backgroundColor: "#000000"}}>
@@ -81,7 +81,7 @@ const Study = ({navigation,route}) => {
     )
 }
 
-export default Study
+export default StudyKeloids
 
 const styles = StyleSheet.create({
     buttonBlack: {

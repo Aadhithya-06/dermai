@@ -28,6 +28,9 @@ import DoctorStats from "../screens/Doctor/Quiz/Statistics"
 import DocResponse from "../screens/Doctor/Respond/DocResponse";
 import QuizLanding from "../screens/Doctor/Quiz/QuizLanding";
 import Study from '../screens/Doctor/Study/Study'
+import StudyKeloids from '../screens/Doctor/Study/StudyKeloids'
+import StudyEczema from '../screens/Doctor/Study/StudyEczema'
+import StudyPsoriasis from '../screens/Doctor/Study/StudyPsoriasis'
 import MoreConditions from '../screens/Doctor/Study/MoreConditions'
 
 const Stack = createStackNavigator();
@@ -85,6 +88,9 @@ const RootStack = () => {
                 <Stack.Screen name="SubmitDetails" component={SubmitDetails}/>
                 <Stack.Screen name="QuizLanding" component={QuizLanding}/>
                 <Stack.Screen name="Study" component={Study}/>
+                <Stack.Screen name="StudyEczema" component={StudyEczema}/>
+                <Stack.Screen name="StudyPsoriasis" component={StudyPsoriasis}/>
+                <Stack.Screen name="StudyKeloids" component={StudyKeloids}/>
                 <Stack.Screen name="MoreConditions" component={MoreConditions}/>
                 <Stack.Screen name="RecordsLanding" component={RecordsLanding}/>
 
