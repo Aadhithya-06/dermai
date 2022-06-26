@@ -53,7 +53,6 @@ const Login = ({navigation}) => {
             }
         })
         .catch(error => {
-            // console.log(error);
             navigation.navigate("PreLanding", " ");
             // handleMessage("An error occurred. Check your network and try again!")
         })

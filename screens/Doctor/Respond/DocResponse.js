@@ -54,7 +54,6 @@ const DocResponse = ({navigation, route}) => {
         axios.post(url,credentials).then((response) =>{
           const result = response.data;
           const {message, status, data} = result;
-          console.log(data)
           if (status !== "SUCCESS"){
              console.log(status)
           } else{

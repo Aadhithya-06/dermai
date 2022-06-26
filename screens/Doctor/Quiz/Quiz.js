@@ -22,13 +22,14 @@ const Quiz = ({navigation,route}) => {
              const url = 'https://secure-forest-32038.herokuapp.com/excema'
              axios.post(url).then((response) =>{
                const result = response.data;
-               const {message, status, image1, image2, quizType} = result;
+               const {message, status, image1, image2, quizType, condition} = result;
                if (status !== "SUCCESS"){
                   console.log(message)
                } else{
                  setImages(image1)
                  setImages2(image2);
                  setQuizType(quizType);
+                 setConditions(condition);
               }
            })
          }
@@ -70,17 +71,34 @@ const Quiz = ({navigation,route}) => {
           <View> 
             <TouchableOpacity style={{bottom: 220, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setMarks(marks + 1);
+                              if (condition == 0) {
+                                setMarks(marks + 1);
+                              } else {
+                                if (condition == 1) {
+                                  Alert.alert("Incorrect Answer", "The answer is Psoriasis");
+                                } else {
+                                  Alert.alert("Incorrect Answer", "The answer is Keloids");
+                                }
+                              }
                               hookMethod();
                               getPicture();
+
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Eczema</Text>
             </TouchableOpacity>  
 
             <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
+                              if (condition == 1) {
+                                setMarks(marks + 1);
+                              } else {
+                                if (condition == 0) {
+                                  Alert.alert("Incorrect Answer", "The answer is Eczema");
+                                } else {
+                                  Alert.alert("Incorrect Answer", "The answer is Keloids");
+                                }
+                              }
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
@@ -88,9 +106,18 @@ const Quiz = ({navigation,route}) => {
 
             <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
+                              if (condition == 2) {
+                                setMarks(marks + 1);
+                              } else {
+                                if (condition == 0) {
+                                  Alert.alert("Incorrect Answer", "The answer is Eczema");
+                                } else {
+                                  Alert.alert("Incorrect Answer", "The answer is Psoriasis");
+                                }
+                              }
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
                               getPicture();
+  
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
             </TouchableOpacity> 
@@ -98,7 +125,13 @@ const Quiz = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
+                              if (condition == 0) {
+                                Alert.alert("Incorrect Answer", "The answer is Eczema");
+                              } else if (condition == 1){
+                                Alert.alert("Incorrect Answer", "The answer is Psoriasis");
+                              } else {
+                                Alert.alert("Incorrect Answer", "The answer is Keloids");
+                              }
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Other</Text>
@@ -132,7 +165,9 @@ const Quiz = ({navigation,route}) => {
         <View> 
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              setMarks(marks + 1);
+                              if (condition == 0) {
+                                setMarks(marks + 1);
+                              } 
                               hookMethod();
                               getPicture();
                              }}>
@@ -142,7 +177,13 @@ const Quiz = ({navigation,route}) => {
             <TouchableOpacity style={{bottom: 290, left:100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
                               hookMethod();
-                              Alert.alert("Incorrect Answer", "These are both examples of Eczema");
+                              if (condition == 0) {
+                                Alert.alert("Incorrect Answer", "These are both examples of Eczema");
+                              } else if (condition == 1) {
+                                Alert.alert("Incorrect Answer", "These are both examples of Psoriasis");
+                              } else {
+                                Alert.alert("Incorrect Answer", "These are both examples of Keloids");
+                              }
                               getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>
