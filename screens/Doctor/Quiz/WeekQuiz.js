@@ -8,7 +8,7 @@ import { CardStyleInterpolators } from '@react-navigation/stack'
 import {Fontisto, Entypo, Ionicons} from "@expo/vector-icons"
 
 
-const Quiz = ({navigation,route}) => {
+const WeekQuiz = ({navigation,route}) => {
 
   const [images, setImages] = useState(null);
   const [images2, setImages2] = useState(null);
@@ -164,6 +164,6 @@ const Quiz = ({navigation,route}) => {
   
 }
 
-export default Quiz
+export default WeekQuiz
 
 const styles = StyleSheet.create({})
