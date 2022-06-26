@@ -24,7 +24,7 @@ const QuizLanding = ({navigation, route}) => {
                                 {bottom: -50}, 
                                 styles.buttonBlack
                             ]}
-                          onPress={() => navigation.navigate("DoctorQuiz", route.params)}>
+                          onPress={() => navigation.navigate("Quiz", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Daily Quiz</Text>
         </TouchableOpacity> 
 
@@ -34,7 +34,7 @@ const QuizLanding = ({navigation, route}) => {
                             ]}
                           onPress={() =>{
                             if (date % 7 == 0) {
-                                navigation.navigate("DoctorQuiz", route.params);
+                                navigation.navigate("WeekQuiz", route.params);
                             } else {
                                 Alert.alert("You have already done this week's quiz");
                             }
@@ -45,11 +45,11 @@ const QuizLanding = ({navigation, route}) => {
 
         <TouchableOpacity style={[
                                 {bottom: -70}, 
-                                (date == 1) ? styles.buttonBlack : styles.buttonGrey
+                                (date == 26) ? styles.buttonBlack : styles.buttonGrey
                             ]}
                             onPress={() =>{
-                              if (date == 1) {
-                                  navigation.navigate("DoctorQuiz", route.params);
+                              if (date == 26) {
+                                  navigation.navigate("MonthQuiz", route.params);
                               } else {
                                   Alert.alert("You have already done this month's quiz");
                               }

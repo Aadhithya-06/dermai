@@ -22,7 +22,7 @@ import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/Doctor/Landing'
 import DocRecords from "../screens/Doctor/Respond/Records";
 import RecordsLanding from "../screens/Doctor/Respond/RecordsLanding";
-import DoctorQuiz from "../screens/Doctor/Quiz/Quiz"
+import Quiz from "../screens/Doctor/Quiz/Quiz"
 import DocPrivacy from "../screens/Doctor/DocPrivacy"
 import DoctorStats from "../screens/Doctor/Quiz/Statistics"
 import DocResponse from "../screens/Doctor/Respond/DocResponse";
@@ -32,6 +32,8 @@ import StudyKeloids from '../screens/Doctor/Study/StudyKeloids'
 import StudyEczema from '../screens/Doctor/Study/StudyEczema'
 import StudyPsoriasis from '../screens/Doctor/Study/StudyPsoriasis'
 import MoreConditions from '../screens/Doctor/Study/MoreConditions'
+import WeekQuiz from '../screens/Doctor/Quiz/WeekQuiz'
+import MonthQuiz from '../screens/Doctor/Quiz/MonthQuiz'
 
 const Stack = createStackNavigator();
 
@@ -83,7 +85,9 @@ const RootStack = () => {
                 <Stack.Screen name="DoctorLanding" component={DoctorLanding}/>
                 <Stack.Screen name="DocRecords" component={DocRecords}/>
                 <Stack.Screen name="DocResponse" component={DocResponse}/>
-                <Stack.Screen name="DoctorQuiz" component={DoctorQuiz}/>
+                <Stack.Screen name="Quiz" component={Quiz}/>
+                <Stack.Screen name="WeekQuiz" component={WeekQuiz}/>
+                <Stack.Screen name="MonthQuiz" component={MonthQuiz}/>
                 <Stack.Screen name="DoctorStats" component={DoctorStats}/>
                 <Stack.Screen name="SubmitDetails" component={SubmitDetails}/>
                 <Stack.Screen name="QuizLanding" component={QuizLanding}/>
