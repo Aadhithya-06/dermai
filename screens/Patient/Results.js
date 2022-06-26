@@ -19,15 +19,16 @@ const Results = ({navigation,route}) => {
             <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
             
             <TouchableOpacity style={tw `bottom-3.5`}>
-              <Text style={tw `top-80 left-32 text-left text-xl`}>Normal Skin (90%)</Text>
+              <Text style={tw `top-80 left-12 text-left text-xl`}>Normal Skin (90%)</Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
                               onPress={() => Linking.openURL("https://www.nhs.uk/conditions/psoriasis/")}>
-              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Psoriasis (3%)</Text>
-            </TouchableOpacity>
+              <Text style={tw `top-80 left-12 text-left text-xl underline text-blue-900`}>Psoriasis - 3% (read more here)</Text>
+            </TouchableOpacity> 
+
             <TouchableOpacity style={tw `top-3.5`} onPress={() => Linking.openURL("https://www.nhs.uk/conditions/atopic-eczema/")}>
-              <Text style={tw `top-80 left-32 text-left text-xl underline text-blue-900`}>Eczema (2%)</Text>
+              <Text style={tw `top-80 left-12 text-left text-xl underline text-blue-900`}>Eczema - 2% (read more here)</Text>
             </TouchableOpacity>
 
             
@@ -42,7 +43,7 @@ const Results = ({navigation,route}) => {
             <Image
               style={{
                 top: 1,
-                width:200,
+                width:50,
                 height:120,
                 resizeMode: 'contain',
               }} 
