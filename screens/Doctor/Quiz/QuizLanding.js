@@ -44,15 +44,16 @@ const QuizLanding = ({navigation, route}) => {
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
-                                {bottom: -70}, 
-                                (date == 26) ? styles.buttonBlack : styles.buttonGrey
+                                {bottom: -70}, styles.buttonBlack
+                                // (date == 26) ? styles.buttonBlack : styles.buttonGrey
                             ]}
                             onPress={() =>{
-                              if (date == 26) {
-                                  navigation.navigate("MonthQuiz", route.params);
-                              } else {
-                                  Alert.alert("You have already done this month's quiz");
-                              }
+                              navigation.navigate("MonthQuiz", route.params);
+                              // if (date == 26) {
+                              //     navigation.navigate("MonthQuiz", route.params);
+                              // } else {
+                              //     Alert.alert("You have already done this month's quiz");
+                              // }
                             }}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Monthly Quiz</Text>
         </TouchableOpacity> 
