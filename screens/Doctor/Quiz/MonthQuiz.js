@@ -22,13 +22,14 @@ const MonthQuiz = ({navigation,route}) => {
              const url = 'https://secure-forest-32038.herokuapp.com/excema'
              axios.post(url).then((response) =>{
                const result = response.data;
-               const {message, status, image1, image2, quizType} = result;
+               const {message, status, image1, image2, quizType, condition} = result;
                if (status !== "SUCCESS"){
                   console.log(message)
                } else{
                  setImages(image1)
                  setImages2(image2);
                  setQuizType(quizType);
+                 setConditions(condition);
               }
            })
          }
@@ -54,7 +55,7 @@ const MonthQuiz = ({navigation,route}) => {
 
   // if quiztype is 0: what condition is it?
   // if quiztype is 1: are these the same condition?
-  if (quizType == 0) {
+
     return ( 
       <View>
         <Text style={tw `font-bold text-center py-28 text-4xl`}>What condition are these? {questions}/5</Text>
@@ -67,42 +68,54 @@ const MonthQuiz = ({navigation,route}) => {
           </View>  
           
 
-          <View> 
-            <TouchableOpacity style={{bottom: 220, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => {
-                              setMarks(marks + 1);
-                              hookMethod();
-                              getPicture();
-                             }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Eczema</Text>
-            </TouchableOpacity>  
+        <View style={styles.textAreaContainer} >
+        <Formik
+                initialValues={{diagnosis: ''}}
+                onSubmit={(values) => {
+                    if(values.diagnosis == '') {
+                        Alert.alert("We cannot have an empty field", 'Please fill the diagnosis');
+                    } else {
+                        setDiagnosis(values.diagnosis);
+                        sendDiagnosis()
 
-            <TouchableOpacity style={{bottom: 270, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => {
-                              hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
-                              getPicture();
-                             }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Psoriasis</Text>
-            </TouchableOpacity> 
+                    }
+                }}
+            >{({handleChange,handleBlur,handleSubmit, values}) => (<StyledFormArea>
+                <MyTextInput
+                    placeholder = "Enter diagnosis of skin disease"
+                    placeholderTextColor={'#9CA3AF'}
+                    onChangeText={handleChange('diagnosis')}
+                    onBlur={handleBlur('diagnosis')}
+                    value={values.diagnosis}
+                />
+                <StyledButton style={styles.buttons} 
+                                  onPress={handleSubmit}>
+                    <ButtonText>
+                        Send diagnosis
+                    </ButtonText>
+                </StyledButton>
+            </StyledFormArea>)}
 
-            <TouchableOpacity style={{bottom: 240, left:-90,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => {
-                              hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
-                              getPicture();
-                             }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Keloids</Text>
-            </TouchableOpacity> 
+            </Formik>
+        </View> 
 
-            <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
+
+
+
+            {/* <TouchableOpacity style={{bottom: 290, left:80,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              hookMethod();
-                              Alert.alert("Incorrect Answer", "The answer is Eczema");
-                              getPicture();
+                            //   hookMethod();
+                            //   if (condition == 0) {
+                            //     Alert.alert("Incorrect Answer", "The answer is Eczema");
+                            //   } else if (condition == 1){
+                            //     Alert.alert("Incorrect Answer", "The answer is Psoriasis");
+                            //   } else {
+                            //     Alert.alert("Incorrect Answer", "The answer is Keloids");
+                            //   }
+                            //   getPicture();
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Other</Text>
-            </TouchableOpacity> 
+            </TouchableOpacity>  */}
 
             <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:-35}]}
                         onPress={() => navigation.navigate("DoctorLanding",route.params)}>
@@ -113,54 +126,9 @@ const MonthQuiz = ({navigation,route}) => {
   
        </View>
 
-    </View> 
+
    
     )
-  } else {
-    return (
-      <View>
-      <Text style={tw `font-bold text-center py-28 text-4xl`}>Are these the same condition? {questions}/5</Text>
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 375, height: 500}}>
-            <Image  style={{width: "48%", height: '50%', top:40, left: 0}}
-                    source={{uri: images}}/>
-            <Image  style={{width: "48%", height: '50%', top:-210, left: 190}}
-                    source={{uri: images2}}/>
-        </View>  
-   
-
-        <View> 
-        <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => {
-                              setMarks(marks + 1);
-                              hookMethod();
-                              getPicture();
-                             }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>Yes</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={{bottom: 290, left:100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
-                             onPress={() => {
-                              hookMethod();
-                              Alert.alert("Incorrect Answer", "These are both examples of Eczema");
-                              getPicture();
-                             }}>
-              <Text style={tw `font-semibold text-center text-2xl text-white`}>No</Text>
-            </TouchableOpacity> 
-
-            <TouchableOpacity style={[tw `absolute left-8 items-center`, {left: 0,right: 0,top:-35}]}
-                        onPress={() => navigation.navigate("DoctorLanding",route.params)}>
-          <Entypo name="home" size={45} /> 
-          <Text style={tw `font-semibold`}>Main Menu</Text>
-        </TouchableOpacity>  
-        </View>
-
-     </View>
-
-  </View>  
-
-    )
-  }
   
 }
 
