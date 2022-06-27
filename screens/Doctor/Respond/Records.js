@@ -27,6 +27,17 @@ const DocRecords = ({navigation,route}) => {
            })
          }
   
+  const confirmDiagnosis = async () => {
+          const url = 'https://secure-forest-32038.herokuapp.com/diagnosisConfirmed'
+          const credentials = {email:email,confirmed: true}
+          axios.post(url,credentials).then((response)=>{
+              const result = response.data;
+              const {message, status, data} = result;
+              navigation.navigate("DocResponse",route.params)
+          }).catch(error => {
+              console.log(error)
+          });
+      }
   const getConfirmation = () => {
      const credentials = {email:email}
      const url = 'https://secure-forest-32038.herokuapp.com/getConfirmation'
@@ -42,7 +53,6 @@ const DocRecords = ({navigation,route}) => {
   }
 
   getConfirmation();
-  console.log(confirmed);
 
   if(confirmed){
    return(<View>
@@ -70,7 +80,7 @@ const DocRecords = ({navigation,route}) => {
           <TouchableOpacity style={[
                                 tw ` w-80 bg-black right-0 rounded-2xl p-3`,
                                 {top: -100 ,marginHorizontal : "2%"}]}
-                             onPress={() => navigation.navigate("DocResponse",route.params)}>
+                             onPress={() => confirmDiagnosis()}>
             <Text style={tw `font-semibold text-center text-2xl text-white`}>Confirm diagnosis</Text>
           </TouchableOpacity>     
   

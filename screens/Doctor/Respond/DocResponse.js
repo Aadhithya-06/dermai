@@ -30,16 +30,7 @@ const DocResponse = ({navigation, route}) => {
     const [images, setImages] = useState(null);
     const {name, email} = route.params;
 
-    const confirmDiagnosis = async () => {
-        const url = 'https://secure-forest-32038.herokuapp.com/diagnosisConfirmed'
-        const credentials = {email:email,confirmed: true}
-        axios.post(url,credentials).then((response)=>{
-            const result = response.data;
-            const {message, status, data} = result;
-        }).catch(error => {
-            console.log(error)
-        });
-    }
+
 
 
     const approveDiagnosis = async () => {
@@ -53,7 +44,6 @@ const DocResponse = ({navigation, route}) => {
                 console.log(status)
             } else{
                 Alert.alert("Diagnosis successfully sent!")
-                confirmDiagnosis();
                 navigation.navigate("RecordsLanding", route.params)            
             }
         }).catch(error => {
@@ -72,7 +62,6 @@ const DocResponse = ({navigation, route}) => {
                 console.log(status)
             } else{
                 Alert.alert("Diagnosis successfully sent!")
-                confirmDiagnosis();
                 navigation.navigate("RecordsLanding", route.params)            
             }
         }).catch(error => {            
