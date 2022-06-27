@@ -28,24 +28,74 @@ const DocResponse = ({navigation, route}) => {
 
     const [diagnosis, setDiagnosis] = useState("");
     const [images, setImages] = useState(null);
-    const {name, email} = route.params
+    const {name, email} = route.params;
+
+    const confirmDiagnosis = async () => {
+        const url = 'https://secure-forest-32038.herokuapp.com/diagnosisConfirmed'
+        const credentials = {email:email,confirmed: true}
+        axios.post(url,credentials).then((response)=>{
+            const result = response.data;
+            const {message, status, data} = result;
+        }).catch(error => {
+            console.log(error)
+        });
+    }
+
 
     const approveDiagnosis = async () => {
         const url = 'https://secure-forest-32038.herokuapp.com/doctorDiagnosis'
-        const credentials = {correct: true}
-        axios.post(url,credentials).then(()=>{}).catch(error => {});
+        const credentials = {email:email,correct: true}
+        axios.post(url,credentials).then((response)=>{
+            const result = response.data;
+            const {message, status, data} = result;
+            if (status !== "SUCCESS"){
+                Alert.alert("Could not upload!","Try again")
+                console.log(status)
+            } else{
+                Alert.alert("Diagnosis successfully sent!")
+                confirmDiagnosis();
+                navigation.navigate("RecordsLanding", route.params)            
+            }
+        }).catch(error => {
+            console.log(error)
+        });
     }
 
     const disapproveDiagnosis = async () => {
         const url = 'https://secure-forest-32038.herokuapp.com/doctorDiagnosis'
-        const credentials = {correct: false}
-        axios.post(url,credentials).then(()=>{}).catch(error => {});
+        const credentials = {email:email,correct: false}
+        axios.post(url,credentials).then((response)=>{
+            const result = response.data;
+            const {message, status} = result;
+            console.log(message)
+            if (status !== "SUCCESS"){
+                console.log(status)
+            } else{
+                Alert.alert("Diagnosis successfully sent!")
+                confirmDiagnosis();
+                navigation.navigate("RecordsLanding", route.params)            
+            }
+        }).catch(error => {            
+            console.log(error)        
+        });
     }
 
     const sendDiagnosis = async () => {
         const url = 'https://secure-forest-32038.herokuapp.com/opinionCollect'
-        const credentials = {diagnosis: diagnosis}
-        axios.post(url,credentials).then(()=>{}).catch(error => {});
+        const credentials = {email:email,diagnosis: diagnosis}
+        axios.post(url,credentials).then((response)=>{
+            const result = response.data;
+            const {message, status, data} = result;
+            if (status !== "SUCCESS"){
+                console.log(status)
+                Alert.alert("Could not upload!","Try again")
+            } else{
+                Alert.alert("Additional information successfully sent!")           
+            }
+            
+        }).catch(error => {
+            console.log(error)
+        });
     }
 
     const getPicture = async () => {
@@ -54,7 +104,6 @@ const DocResponse = ({navigation, route}) => {
         axios.post(url,credentials).then((response) =>{
           const result = response.data;
           const {message, status, data} = result;
-          console.log(data)
           if (status !== "SUCCESS"){
              console.log(status)
           } else{
@@ -86,12 +135,11 @@ const DocResponse = ({navigation, route}) => {
                     } else {
                         setDiagnosis(values.diagnosis);
                         sendDiagnosis()
-
                     }
                 }}
             >{({handleChange,handleBlur,handleSubmit, values}) => (<StyledFormArea>
                 <MyTextInput
-                    placeholder = "Enter diagnosis of skin disease"
+                    placeholder = "Enter information about your observations"
                     placeholderTextColor={'#9CA3AF'}
                     onChangeText={handleChange('diagnosis')}
                     onBlur={handleBlur('diagnosis')}
@@ -113,12 +161,12 @@ const DocResponse = ({navigation, route}) => {
         </View>
 
         <StyledButton style={{bottom: 90, left:-90,  backgroundColor: '#000000', width: 150, height: 60}}
-                             onPress={() => {approveDiagnosis(); Alert.alert("Thank you", "Your Diagnosis Has Been Recorded"); navigation.navigate("RecordsLanding", route.params)}}>
+                             onPress={() => {approveDiagnosis()}}>
               <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>Yes</ButtonText>
             </StyledButton>  
 
             <StyledButton style={{bottom: 160, left:80,  backgroundColor: '#000000', width: 150, height: 60}}
-                            onPress={() => {disapproveDiagnosis(); Alert.alert("Thank you", "Your Diagnosis Has Been Recorded"); navigation.navigate("RecordsLanding", route.params)}}>
+                            onPress={() => {disapproveDiagnosis()}}>
               <ButtonText style={tw `font-semibold text-center text-2xl text-white`}>No</ButtonText>
             </StyledButton> 
 

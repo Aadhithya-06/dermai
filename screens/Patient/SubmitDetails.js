@@ -37,7 +37,6 @@ const SubmitDetails = ({navigation, route}) => {
         axios.post(url,credentials).then((response) =>{
           const result = response.data;
           const {message, status, data} = result;
-          console.log(data)
           if (status !== "SUCCESS"){
              console.log(status)
           } else{
@@ -97,8 +96,6 @@ const SubmitDetails = ({navigation, route}) => {
 const MyTextInput = ({label, icon,isPassword,hidePassword,setHidePassword, ...props}) => {
     return(
         <View style={styles.textArea}>
-            <LeftIcon>
-            </LeftIcon>
             <TextInput {...props}/>
         </View>);
 }
@@ -113,7 +110,7 @@ const styles = StyleSheet.create({
         width: 350,
       },
       textArea: {
-        height: 50,
+        height: 150,
         justifyContent: "flex-start"
       },
     buttonGrey: {

@@ -34,6 +34,7 @@ import StudyPsoriasis from '../screens/Doctor/Study/StudyPsoriasis'
 import MoreConditions from '../screens/Doctor/Study/MoreConditions'
 import WeekQuiz from '../screens/Doctor/Quiz/WeekQuiz'
 import MonthQuiz from '../screens/Doctor/Quiz/MonthQuiz'
+import DocConfirmedRecords from "../screens/Doctor/Respond/ConfirmedRecords";
 
 const Stack = createStackNavigator();
 
@@ -97,6 +98,7 @@ const RootStack = () => {
                 <Stack.Screen name="StudyKeloids" component={StudyKeloids}/>
                 <Stack.Screen name="MoreConditions" component={MoreConditions}/>
                 <Stack.Screen name="RecordsLanding" component={RecordsLanding}/>
+                <Stack.Screen name="DocConfirmedRecords" component={DocConfirmedRecords}/>
 
             </Stack.Navigator>
         </NavigationContainer>

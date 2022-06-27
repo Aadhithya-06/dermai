@@ -38,7 +38,7 @@ const RecordsLanding = ({navigation, route}) => {
         <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
                               {bottom: -50, marginHorizontal : "15%"}]}
-                          onPress={() => navigation.navigate("ConfirmedRecords", route.params)}>
+                          onPress={() => navigation.navigate("DocConfirmedRecords", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Confirmed Diagnoses</Text>
         </TouchableOpacity>   
  
