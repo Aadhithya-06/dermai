@@ -11,11 +11,9 @@ const DoctorStats = ({navigation, route}) => {
     const url = 'https://secure-forest-32038.herokuapp.com/quizGet';
     console.log(marks);
     axios.post(url).then(response => {
-      // console.log(response.data);
       const {quiz} = response.data;
-      // console.log(quiz);
       setMarks(quiz);
-    });
+    }).catch(() => {});
 
     if(marks == undefined) {
         return (

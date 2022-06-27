@@ -15,9 +15,11 @@ import SubmitDetails from "../screens/Patient/SubmitDetails"
 import Security from './../screens/Patient/Security'
 import Faq from './../screens/Patient/Faq'
 import DocFaq from './../screens/Doctor/DocFaq'
+import DocSettings from './../screens/Doctor/DocSettings'
 import Family from '../screens/Patient/Family'
 import Results from './../screens/Patient/Results'
 import Record from '../screens/Patient/Record'
+import Settings from './../screens/Patient/Settings'
 import PreLanding from './../screens/PreLanding'
 import DoctorLanding from './../screens/Doctor/Landing'
 import DocRecords from "../screens/Doctor/Respond/Records";
@@ -99,6 +101,8 @@ const RootStack = () => {
                 <Stack.Screen name="MoreConditions" component={MoreConditions}/>
                 <Stack.Screen name="RecordsLanding" component={RecordsLanding}/>
                 <Stack.Screen name="DocConfirmedRecords" component={DocConfirmedRecords}/>
+                <Stack.Screen name="Settings" component={Settings}/>
+                <Stack.Screen name="DocSettings" component={DocSettings}/>
 
             </Stack.Navigator>
         </NavigationContainer>

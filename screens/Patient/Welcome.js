@@ -59,12 +59,12 @@ const Welcome = ({navigation, route}) => {
 
       <View>
       <TouchableOpacity style={[tw `absolute items-center`, {left: 15, bottom:-270}]}
-                     onPress={() => navigation.navigate("Faq",route.params)}>
+                     onPress={() => navigation.navigate("Settings",route.params)}>
           <AntDesign name="setting" size={45} />
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[tw `absolute items-center`, {left: 0, right: 0, bottom:-270}]}
+        <TouchableOpacity style={[tw `absolute items-center`, {left: 100, right: 100, bottom:-270}]}
                      onPress={() => navigation.navigate("Faq",route.params)}>
           <AntDesign name="question" size={45} />
           <Text style={tw `font-semibold`}>FAQs</Text>
