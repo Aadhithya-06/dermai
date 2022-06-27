@@ -13,7 +13,7 @@ const DoctorStats = ({navigation, route}) => {
     axios.post(url).then(response => {
       const {quiz} = response.data;
       setMarks(quiz);
-    });
+    }).catch(() => {});
 
     if(marks == undefined) {
         return (
