@@ -30,31 +30,31 @@ const RecordsLanding = ({navigation, route}) => {
       <View style={tw `h-1/2 items-center`}>
       <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
-                              {bottom: -20, marginHorizontal : "25%"}]}
+                              {bottom: -50, marginHorizontal : "25%"}]}
                           onPress={() => navigation.navigate("DocRecords", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Diagnoses To Confirm</Text>
         </TouchableOpacity> 
 
         <TouchableOpacity style={[
                               tw `w-80 bg-black p-4 rounded-2xl`,
-                              {bottom: -50, marginHorizontal : "15%"}]}
+                              {bottom: -100, marginHorizontal : "15%"}]}
                           onPress={() => navigation.navigate("DocConfirmedRecords", route.params)}>
           <Text style={tw `font-semibold text-center text-xl text-white`}>Confirmed Diagnoses</Text>
         </TouchableOpacity>   
  
         
-        <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -117.5}]}>
+        <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -200}]}>
           <AntDesign name="setting" size={45} /> 
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>      
 
-        <TouchableOpacity style={[tw `items-center`, {right:0, bottom: -55}]}
+        <TouchableOpacity style={[tw `items-center`, {right:0, bottom: -139}]}
                      onPress={() => navigation.navigate("DocFaq",route.params)}>
           <AntDesign name="question" size={45} />
           <Text style={tw `font-semibold`}>FAQs</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[tw `items-center`, {right:-120, bottom: 7.5}]}
+        <TouchableOpacity style={[tw `items-center`, {right:-120, bottom: -78}]}
                      onPress={() => navigation.navigate("DocPrivacy",route.params)}>
           <FontAwesome5 name="user-lock" size={45} />
           <Text style={tw `font-semibold`}>User Privacy</Text>

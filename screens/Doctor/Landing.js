@@ -53,7 +53,7 @@ const DoctorLanding = ({navigation, route}) => {
         </TouchableOpacity>   
         
         <TouchableOpacity style={[tw `items-center`, {right:120, bottom: -117.5}]}
-                    onPress={() => navigation.navigate("DocSettings",route.params)}>
+                    onPress={() => navigation.navigate("Doc",route.params)}>
           <AntDesign name="setting" size={45} /> 
           <Text style={tw `font-semibold`}>Settings</Text>
         </TouchableOpacity>      
