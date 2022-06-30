@@ -40,7 +40,6 @@ export default function CameraPage({navigation, route}) {
   axios.post(url,credentials).then((response)=>{
       const result = response.data;
       const {message, status, data} = result;
-      navigation.navigate("DocResponse",route.params)
   }).catch(error => {
       console.log(error)
   });
@@ -48,6 +47,7 @@ export default function CameraPage({navigation, route}) {
 
 const check = async () => {
   getConfirmation();
+  console.log(confirmed)
   if(confirmed){
       newDiagnosis();
   }
@@ -86,8 +86,8 @@ const check = async () => {
         file: base64Img,
         upload_preset: 'dermai'
       };
-      check();
-      fetch(apiUrl, {
+    newDiagnosis();      
+    fetch(apiUrl, {
         body: JSON.stringify(data),
         headers: {
           'content-type': 'application/json'
@@ -99,13 +99,13 @@ const check = async () => {
           if (data.secure_url) {
             const credentials = {email: email,images: data.secure_url}
             const url = 'https://secure-forest-32038.herokuapp.com/upload'
-            console.log(credentials)
             axios.post(url,credentials).then((response) =>{
               const result = response.data;
               const {message, status, data} = result;
               if (status !== "SUCCESS"){
                   console.log(status)
               } else{
+                  console.log(confirmed);
                   navigation.navigate("SubmitDetails",route.params)
               }
           })

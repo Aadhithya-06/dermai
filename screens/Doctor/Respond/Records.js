@@ -47,6 +47,7 @@ const DocRecords = ({navigation,route}) => {
       if (status !== "SUCCESS"){
          console.log(status)
       } else{
+          console.log(data)
           setConfirmed(data)
        }
   })
