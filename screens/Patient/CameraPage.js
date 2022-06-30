@@ -17,7 +17,41 @@ export default function CameraPage({navigation, route}) {
   const cameraRef = useRef(null);
   const [DATA,setDATA] = useState(null);
   const {name, email} = route.params;
-  
+
+  const [confirmed, setConfirmed] = useState(false);
+
+  const getConfirmation = () => {
+    const credentials = {email:email}
+    const url = 'https://secure-forest-32038.herokuapp.com/getConfirmation'
+    axios.post(url,credentials).then((response) =>{
+     const result = response.data;
+     const {message, status, data} = result;
+     if (status !== "SUCCESS"){
+        console.log(status)
+     } else{
+         setConfirmed(data)
+      }
+ })
+ }
+
+ const newDiagnosis = async () => {
+  const url = 'https://secure-forest-32038.herokuapp.com/diagnosisConfirmed'
+  const credentials = {email:email,confirmed: false}
+  axios.post(url,credentials).then((response)=>{
+      const result = response.data;
+      const {message, status, data} = result;
+      navigation.navigate("DocResponse",route.params)
+  }).catch(error => {
+      console.log(error)
+  });
+}
+
+const check = async () => {
+  getConfirmation();
+  if(confirmed){
+      newDiagnosis();
+  }
+}
 
   useEffect(() => {
     Alert.alert("Keep camera 4 inches (10cm) away from affected area");
@@ -52,7 +86,7 @@ export default function CameraPage({navigation, route}) {
         file: base64Img,
         upload_preset: 'dermai'
       };
-
+      check();
       fetch(apiUrl, {
         body: JSON.stringify(data),
         headers: {
