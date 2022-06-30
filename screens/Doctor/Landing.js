@@ -28,7 +28,7 @@ const DoctorLanding = ({navigation, route}) => {
       </View>
 
       <View>
-        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 60, color: "#ffffff"}]}>{"Dr. Daftary" || "Shrey Shh"}</Text>
+        <Text style={[tw `font-bold text-center text-4xl`, {bottom: 80, color: "#ffffff"}]}>{"Dr. Daftary" || "Shrey Shh"}</Text>
       </View>
 
       <View style={tw `h-1/2 items-center`}>
