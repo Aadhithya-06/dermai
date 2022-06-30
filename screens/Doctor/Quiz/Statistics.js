@@ -27,7 +27,7 @@ const DoctorStats = ({navigation, route}) => {
       return (
         <View>
         <View>
-          <Text style={tw `font-bold text-center py-28 text-4xl`}> Statistics </Text>
+          <Text style={tw `font-bold text-center py-28 text-4xl`}> Daily Statistics </Text>
           <Text style={tw `font-bold text-center py-28 text-4xl`}> You got {marks} out of {questions} </Text>
         </View>
         <View>
