@@ -69,7 +69,7 @@ const DocRecords = ({navigation,route}) => {
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 325, height: 500}}>
               <Text style={tw `font-semibold top-4 text-left text-xl`}>Name: Shrey Shah</Text>
-              <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 16/06/22</Text>
+              <Text style={tw `font-semibold top-4 text-left text-lg`}>Date: 01/07/22</Text>
               <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Normal Skin - 90%</Text>
               <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Psoriasis - 3%</Text>
               <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Eczema - 2%</Text>

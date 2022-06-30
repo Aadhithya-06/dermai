@@ -34,7 +34,7 @@ const Record = ({navigation,route}) => {
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <View style={{bottom: 50,  backgroundColor: '#FFFFFF', width: 325, height: 500}}>
-            <Text style={tw `font-semibold top-4 text-left text-xl`}>Date: 16/06/22</Text>
+            <Text style={tw `font-semibold top-4 text-left text-xl`}>Date: 01/07/22</Text>
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Normal Skin - 90%</Text>
             <Text style={tw `top-4 text-left text-lg`}>Probable Diagnosis: Psoriasis - 3%</Text>
             <Text style={tw `top-4 text-left text-lg`}>Other possible diagnosis: Eczema - 2%</Text>

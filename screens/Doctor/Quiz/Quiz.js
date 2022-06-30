@@ -164,9 +164,21 @@ const Quiz = ({navigation,route}) => {
         <View> 
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                                setMarks(marks + 1);
-                              hookMethod();
-                              getPicture();
+                               console.log("we are here2:" + marks)
+                              setMarks(marks + 1);
+                              setQuestions(questions+1);
+                              if(questions > 4) {
+                                const credentials = {score: String(marks + 1)}
+                                console.log("we are here:" + marks);
+                                const url = 'https://secure-forest-32038.herokuapp.com/quizSubmit'
+                                axios.post(url,credentials).then(()=>{}).catch(error => {});
+                                setQuestions(0);
+                                setMarks(0);
+                                navigation.navigate("DoctorStats", route.params);
+                              } else {
+                                getPicture();
+                                
+                              }
                              }}>
               <Text style={tw `font-semibold text-center text-2xl text-white`}>Yes</Text>
             </TouchableOpacity> 
