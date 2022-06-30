@@ -14,7 +14,7 @@ const Quiz = ({navigation,route}) => {
   const [images2, setImages2] = useState(null);
   const [quizType, setQuizType] = useState(null);
   const [marks, setMarks] = useState(0);
-  const [questions, setQuestions] = useState(0);
+  const [questions, setQuestions] = useState(1);
   const [condition, setConditions] = useState(0);
   // const {name, email} = route.params
 
@@ -37,8 +37,6 @@ const Quiz = ({navigation,route}) => {
   const hookMethod = async () => {
     setQuestions(questions+1);
     if(questions > 4) {
-      // const res = marks;
-      // const q = questions;
       const credentials = {score: String(marks)}
       const url = 'https://secure-forest-32038.herokuapp.com/quizSubmit'
       axios.post(url,credentials).then(()=>{}).catch(error => {});
@@ -49,9 +47,10 @@ const Quiz = ({navigation,route}) => {
   }
 
    useEffect(() => {
-          Alert.alert("Quiz Rules", "If you have the correct answer, we will go straight to the next questions. If you get a question wrong, you will be told what the correct answer is.");
+    console.log(marks);
+          // Alert.alert("Quiz Rules", "If you have the correct answer, we will go straight to the next questions. If you get a question wrong, you will be told what the correct answer is.");
           getPicture();
-      }, [])
+      }, [questions])
 
   // if quiztype is 0: what condition is it?
   // if quiztype is 1: are these the same condition?
@@ -165,9 +164,7 @@ const Quiz = ({navigation,route}) => {
         <View> 
         <TouchableOpacity style={{bottom: 240, left:-100,  backgroundColor: '#000000', width: 150, height: 50, borderRadius:20}}
                              onPress={() => {
-                              if (condition == 0) {
                                 setMarks(marks + 1);
-                              } 
                               hookMethod();
                               getPicture();
                              }}>
